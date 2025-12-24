@@ -1,0 +1,8 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+requests>=2.31.0
+pymongo>=4.7.0
+qdrant-client>=1.9.0
+ollama>=0.1.9
+python-dotenv>=1.0.0
+pytest>=8.3.0
