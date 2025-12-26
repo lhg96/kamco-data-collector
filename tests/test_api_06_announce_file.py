@@ -90,6 +90,10 @@ def main() -> int:
         print("→ TEST_PLNM_NO 또는 TEST_PBCT_NO가 설정되지 않음. 공고목록에서 자동 조회...")
         plnm_no, pbct_no = get_first_plnm_pbct_no()
         
+        # https://www.onbid.co.kr/op/ppa/plnmmn/publicAnnounceRlstDetail.do?pbctNo=9994472&plnmNo=850254
+        # plnm_no = 850254
+        #pbct_no = 9994472
+        
         if not plnm_no or not pbct_no:
             print("❌ 공고번호 또는 공매번호를 가져올 수 없습니다.")
             return 1
@@ -135,8 +139,8 @@ def main() -> int:
         return 3
 
     total_count = body.get("totalCount", 0)
-    items = body.get("items", {})
-    file_list = items.get("fileItem", [])
+    items = body.get("items") or {}
+    file_list = items.get("fileItem", []) if items else []
     
     if file_list:
         count = len(file_list) if isinstance(file_list, list) else 1

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}오류 - KAMCO 수집 관리{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0"><i class="bi bi-exclamation-triangle"></i> 오류 발생</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ message }}</p>
+                <a href="{{ url_for('index') }}" class="btn btn-primary">
+                    <i class="bi bi-house-door"></i> 홈으로 돌아가기
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

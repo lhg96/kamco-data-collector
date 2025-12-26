@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}대시보드 - KAMCO 수집 관리{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h2><i class="bi bi-speedometer2"></i> 대시보드</h2>
+    </div>
+</div>
+
+<!-- 통계 카드 -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card card-stat">
+            <div class="card-body">
+                <h5 class="card-title text-muted">전체 수집 데이터</h5>
+                <h2 class="card-text">{{ "{:,}".format(stats.total_count) }}</h2>
+                <p class="text-muted mb-0"><i class="bi bi-database"></i> 건</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card card-stat">
+            <div class="card-body">
+                <h5 class="card-title text-muted">오늘 수집한 데이터</h5>
+                <h2 class="card-text">{{ "{:,}".format(stats.recent_count) }}</h2>
+                <p class="text-muted mb-0"><i class="bi bi-calendar-check"></i> 건</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 빠른 액션 -->
+<div class="row mb-4">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-lightning"></i> 빠른 액션</h5>
+                <div class="d-grid gap-2 d-md-flex">
+                    <a href="{{ url_for('collect_page') }}" class="btn btn-primary">
+                        <i class="bi bi-cloud-download"></i> 데이터 수집 시작
+                    </a>
+                    <a href="{{ url_for('list_page') }}" class="btn btn-outline-primary">
+                        <i class="bi bi-list-ul"></i> 전체 목록 보기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 최근 수집 데이터 -->
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="bi bi-clock-history"></i> 최근 수집 데이터</h5>
+            </div>
+            <div class="card-body">
+                {% if stats.recent_items %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>공고번호</th>
+                                <th>공매번호</th>
+                                <th>공고명</th>
+                                <th>수집시간</th>
+                                <th>액션</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in stats.recent_items %}
+                            <tr>
+                                <td>{{ item.PLNM_NO }}</td>
+                                <td>{{ item.PBCT_NO }}</td>
+                                <td>
+                                    {% set plnm_nm = item.get('announce_list_item', {}).get('PLNM_NM') or item.get('basic_info', {}).get('PLNM_NM') or 'N/A' %}
+                                    {{ plnm_nm[:50] }}{% if plnm_nm|length > 50 %}...{% endif %}
+                                </td>
+                                <td>{{ item.collected_at|datetime_format('%Y-%m-%d %H:%M') }}</td>
+                                <td>
+                                    <a href="{{ url_for('detail_page', item_id=item._id) }}" class="btn btn-sm btn-outline-primary">
+                                        상세보기
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <p class="text-muted text-center mb-0">수집된 데이터가 없습니다.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

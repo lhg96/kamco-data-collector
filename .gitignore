@@ -28,6 +28,8 @@ env/
 
 # Environment Variables
 .env
+.env.local
+.env.*.local
 
 # IDE
 .vscode/
@@ -39,7 +41,35 @@ env/
 # Output Files
 *.csv
 kamco_export.csv
+*.log
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Secrets and Keys
+secrets/
+*.key
+*.pem
+*_rsa
+*_dsa
+*_ecdsa
+*_ed25519
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json

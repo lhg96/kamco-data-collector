@@ -1,1 +1,1 @@
-"""KAMCO 데이터 수집 서비스"""
+"""KAMCO Data Collection Service"""

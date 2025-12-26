@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block title %}상세보기 - KAMCO 수집 관리{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url_for('index') }}">홈</a></li>
+                <li class="breadcrumb-item"><a href="{{ url_for('list_page') }}">수집 목록</a></li>
+                <li class="breadcrumb-item active">상세보기</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2><i class="bi bi-file-earmark-text"></i> 공고 상세 정보</h2>
+            <div>
+                <a href="https://www.onbid.co.kr/op/ppa/plnmmn/publicAnnounceRlstDetail.do?pbctNo={{ item.PBCT_NO }}&plnmNo={{ item.PLNM_NO }}" 
+                   target="_blank" 
+                   class="btn btn-outline-primary">
+                    <i class="bi bi-box-arrow-up-right"></i> 원문 보기
+                </a>
+                <a href="{{ url_for('list_page') }}" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> 목록으로
+                </a>
+                <button type="button" class="btn btn-outline-danger" onclick="deleteItem('{{ item._id }}')">
+                    <i class="bi bi-trash"></i> 삭제
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 기본 정보 -->
+<div class="row mb-4">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="bi bi-info-circle"></i> 기본 정보</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <dl class="row">
+                            <dt class="col-sm-4">공고번호</dt>
+                            <dd class="col-sm-8"><code>{{ item.PLNM_NO }}</code></dd>
+
+                            <dt class="col-sm-4">공매번호</dt>
+                            <dd class="col-sm-8"><code>{{ item.PBCT_NO }}</code></dd>
+
+                            <dt class="col-sm-4">공고명</dt>
+                            <dd class="col-sm-8">
+                                {% set plnm_nm = item.get('announce_list_item', {}).get('PLNM_NM') or item.get('basic_info', {}).get('PLNM_NM') or 'N/A' %}
+                                {{ plnm_nm }}
+                            </dd>
+
+                            <dt class="col-sm-4">재산구분</dt>
+                            <dd class="col-sm-8">
+                                {% set prpt_dvsn_nm = item.get('announce_list_item', {}).get('PRPT_DVSN_NM') or item.get('basic_info', {}).get('PRPT_DVSN_NM') %}
+                                {% if prpt_dvsn_nm %}
+                                <span class="badge bg-secondary">{{ prpt_dvsn_nm }}</span>
+                                {% else %}
+                                <span class="text-muted">-</span>
+                                {% endif %}
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-md-6">
+                        <dl class="row">
+                            {% if item.basic_info %}
+                            <dt class="col-sm-4">기관명</dt>
+                            <dd class="col-sm-8">{{ item.basic_info.ORG_NM or '-' }}</dd>
+
+                            <dt class="col-sm-4">담당부서</dt>
+                            <dd class="col-sm-8">{{ item.basic_info.RSBY_DEPT or '-' }}</dd>
+
+                            <dt class="col-sm-4">담당자</dt>
+                            <dd class="col-sm-8">{{ item.basic_info.PSCG_NM or '-' }}</dd>
+
+                            <dt class="col-sm-4">연락처</dt>
+                            <dd class="col-sm-8">{{ item.basic_info.PSCG_TPNO or '-' }}</dd>
+                            {% else %}
+                            <dt class="col-sm-12 text-muted">상세 정보 없음</dt>
+                            {% endif %}
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 공매 일정 -->
+<div class="row mb-4">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="bi bi-calendar-event"></i> 공매 일정 ({{ item.schedule_info|length }}개)</h5>
+            </div>
+            <div class="card-body">
+                {% if item.schedule_info %}
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>공매번호</th>
+                                <th>차수</th>
+                                <th>입찰방식</th>
+                                <th>입찰시작</th>
+                                <th>입찰종료</th>
+                                <th>개찰일시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for schedule in item.schedule_info %}
+                            <tr>
+                                <td><code>{{ schedule.PBCT_NO }}</code></td>
+                                <td>{{ schedule.PBCT_DGR }}차</td>
+                                <td><span class="badge bg-info">{{ schedule.BID_DVSN_NM }}</span></td>
+                                <td>{{ schedule.PBCT_BEGN_DTM }}</td>
+                                <td>{{ schedule.PBCT_CLS_DTM }}</td>
+                                <td>{{ schedule.PBCT_EXCT_DTM }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <p class="text-muted text-center mb-0">공매 일정 정보가 없습니다.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 첨부 파일 -->
+<div class="row mb-4">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="bi bi-paperclip"></i> 첨부 파일 ({{ item.file_info|length }}개)</h5>
+            </div>
+            <div class="card-body">
+                {% if item.file_info %}
+                <div class="list-group">
+                    {% for file in item.file_info %}
+                    <div class="list-group-item">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1"><i class="bi bi-file-earmark"></i> {{ file.ATCH_FILE_NM }}</h6>
+                            <small class="text-muted">파일번호: {{ file.ATCH_FILE_PTCS_NO }}</small>
+                        </div>
+                        <p class="mb-0 text-muted"><i class="bi bi-folder"></i> {{ file.FILE_PTH_CNTN }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-muted text-center mb-0">첨부 파일이 없습니다.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 메타 정보 -->
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="bi bi-database"></i> 메타 정보</h5>
+            </div>
+            <div class="card-body">
+                <dl class="row mb-0">
+                    <dt class="col-sm-2">데이터 ID</dt>
+                    <dd class="col-sm-10"><code>{{ item._id }}</code></dd>
+
+                    <dt class="col-sm-2">수집 시간</dt>
+                    <dd class="col-sm-10">{{ item.collected_at|datetime_format('%Y년 %m월 %d일 %H:%M:%S') }}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+async function deleteItem(itemId) {
+    if (!confirm('정말 삭제하시겠습니까?')) {
+        return;
+    }
+    
+    try {
+        const response = await fetch(`/api/delete/${itemId}`, {
+            method: 'POST'
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            alert('삭제되었습니다.');
+            window.location.href = '{{ url_for("list_page") }}';
+        } else {
+            alert('삭제 실패: ' + data.message);
+        }
+    } catch (error) {
+        alert('오류 발생: ' + error.message);
+    }
+}
+</script>
+{% endblock %}

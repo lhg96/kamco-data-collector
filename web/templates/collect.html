@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}데이터 수집 - KAMCO 수집 관리{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h2><i class="bi bi-cloud-download"></i> 데이터 수집</h2>
+        <p class="text-muted">KAMCO 공매 공고 데이터를 수집합니다.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">수집 설정</h5>
+            </div>
+            <div class="card-body">
+                <form id="collectForm">
+                    <div class="mb-4">
+                        <label class="form-label">수집 방식</label>
+                        <div class="btn-group w-100" role="group">
+                            <input type="radio" class="btn-check" name="collect_mode" id="mode_list" value="list" checked>
+                            <label class="btn btn-outline-primary" for="mode_list">
+                                <i class="bi bi-list"></i> 공고 목록
+                            </label>
+                            
+                            <input type="radio" class="btn-check" name="collect_mode" id="mode_latest" value="latest">
+                            <label class="btn btn-outline-primary" for="mode_latest">
+                                <i class="bi bi-clock-history"></i> 최신 공고
+                            </label>
+                        </div>
+                        <div class="form-text">공고 목록: 전체 목록에서 페이지별 조회 | 최신 공고: 최근 일정 기준 조회</div>
+                    </div>
+
+                    <div id="listModeSettings">
+                        <div class="mb-3">
+                            <label for="page_no" class="form-label">페이지 번호</label>
+                            <input type="number" class="form-control" id="page_no" name="page_no" value="1" min="1" required>
+                            <div class="form-text">조회할 페이지 번호를 입력하세요.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="num_of_rows" class="form-label">조회 건수</label>
+                            <input type="number" class="form-control" id="num_of_rows" name="num_of_rows" value="10" min="1" max="100" required>
+                            <div class="form-text">한 번에 조회할 건수 (1-100)</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="prpt_dvsn_cd" class="form-label">재산구분코드</label>
+                            <select class="form-select" id="prpt_dvsn_cd" name="prpt_dvsn_cd">
+                                <option value="0001" selected>0001 - 금융권담보재산</option>
+                                <option value="0002">0002 - 비금융권담보재산</option>
+                                <option value="0003">0003 - 압류재산</option>
+                                <option value="0004">0004 - 국유재산</option>
+                                <option value="0005">0005 - 기타일반재산</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="latestModeSettings" style="display: none;">
+                        <div class="mb-3">
+                            <label for="days" class="form-label">조회 기간 (일)</label>
+                            <input type="number" class="form-control" id="days" name="days" value="180" min="1" max="365">
+                            <div class="form-text">최근 며칠 내 일정이 있는 공고를 조회 (1-365일)</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="max_count" class="form-label">최대 수집 개수</label>
+                            <input type="number" class="form-control" id="max_count" name="max_count" value="10" min="1" max="50">
+                            <div class="form-text">수집할 최대 공고 개수 (1-50개)</div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg" id="collectBtn">
+                            <i class="bi bi-play-fill"></i> 수집 시작
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">수집 결과</h5>
+            </div>
+            <div class="card-body" id="resultArea">
+                <p class="text-muted text-center mb-0">수집을 시작하면 결과가 여기에 표시됩니다.</p>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5 class="mb-0">안내</h5>
+            </div>
+            <div class="card-body">
+                <ul class="mb-0">
+                    <li>수집 작업은 시간이 걸릴 수 있습니다.</li>
+                    <li>중복된 데이터는 자동으로 업데이트됩니다.</li>
+                    <li>첨부파일 정보도 함께 수집됩니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// 수집 방식 변경 시 설정 패널 전환
+document.querySelectorAll('input[name="collect_mode"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        const listSettings = document.getElementById('listModeSettings');
+        const latestSettings = document.getElementById('latestModeSettings');
+        
+        if (this.value === 'list') {
+            listSettings.style.display = 'block';
+            latestSettings.style.display = 'none';
+        } else {
+            listSettings.style.display = 'none';
+            latestSettings.style.display = 'block';
+        }
+    });
+});
+
+document.getElementById('collectForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const btn = document.getElementById('collectBtn');
+    const resultArea = document.getElementById('resultArea');
+    
+    // 버튼 비활성화
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>수집 중...';
+    
+    // 결과 영역 초기화
+    resultArea.innerHTML = '<div class="text-center"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div><p class="mt-2 text-muted">데이터 수집 중...</p></div>';
+    
+    try {
+        const formData = new FormData(this);
+        const response = await fetch('/api/collect', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            resultArea.innerHTML = `
+                <div class="alert alert-success">
+                    <h6><i class="bi bi-check-circle"></i> 수집 완료</h6>
+                    <hr>
+                    <p class="mb-1"><strong>전체 공고:</strong> ${data.stats.total_announces}개</p>
+                    <p class="mb-1"><strong>처리 성공:</strong> ${data.stats.processed_announces}개</p>
+                    <p class="mb-1"><strong>처리 실패:</strong> ${data.stats.failed_announces}개</p>
+                    <p class="mb-0"><strong>DB 저장:</strong> ${data.stats.saved_items}개</p>
+                </div>
+                <a href="${window.location.origin}/list" class="btn btn-outline-primary w-100">
+                    <i class="bi bi-list-ul"></i> 수집 목록 보기
+                </a>
+            `;
+        } else {
+            resultArea.innerHTML = `
+                <div class="alert alert-danger">
+                    <h6><i class="bi bi-exclamation-triangle"></i> 수집 실패</h6>
+                    <hr>
+                    <p class="mb-0">${data.message}</p>
+                </div>
+            `;
+        }
+    } catch (error) {
+        resultArea.innerHTML = `
+            <div class="alert alert-danger">
+                <h6><i class="bi bi-exclamation-triangle"></i> 오류 발생</h6>
+                <hr>
+                <p class="mb-0">${error.message}</p>
+            </div>
+        `;
+    } finally {
+        // 버튼 활성화
+        btn.disabled = false;
+        btn.innerHTML = '<i class="bi bi-play-fill"></i> 수집 시작';
+    }
+});
+</script>
+{% endblock %}

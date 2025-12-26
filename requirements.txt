@@ -6,3 +6,7 @@ qdrant-client>=1.9.0
 ollama>=0.1.9
 python-dotenv>=1.0.0
 pytest>=8.3.0
+flask>=3.0.0
+xmltodict>=0.13.0
+PublicDataReader>=1.0.0
+pandas>=2.0.0

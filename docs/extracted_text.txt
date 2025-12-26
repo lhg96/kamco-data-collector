@@ -1,0 +1,533 @@
+
+
+[페이지 1]
+공공데이터 개방•공유•활용 체계 개발Open API 활용가이드
+1. API ࠺ࢲझ ࣁݺ ...............................................................................................................................................31.1 ޛѤ੿ࠁઑഥ࠺ࢲझ API ࠺ࢲझ ................................................................................................................3о.API ࠺ࢲझ ѐਃ ......................................................................................................................3
+목 차
+
+[페이지 2]
+Open API ഝਊо੉٘ա.ࣁ࢚ӝמ ۾ݾ .........................................................................................................................4׮.Open API ী۞ ௏٘ ੿ܻ ...............................................................................................................127
+-   -2
+
+[페이지 3]
+Open API ഝਊо੉٘1. API ࠺ࢲझ ࣁݺ1.1 ޛѤ੿ࠁઑഥ࠺ࢲझ API ࠺ࢲझо.API ࠺ࢲझ ѐਃ
+API ࠺ࢲझ ੿ࠁAPIݺ(Ҵޙ)ޛѤ੿ࠁઑഥ࠺ࢲझ
+API ݺࢸৡ٘࠺ ా೤ ਊޛ߹بѤ, ۽࢜਍ޛѤ, ݃х੐ޛ߅Ѥ, ࣻ੄҅ডоޛמѤ, 50%୓хޛѤ, ௿ܼ ఑ 20 ޛѤ, ҙब ఑ 20 ޛѤ੄ ۾ݾ ઑഥܳ ઁҕೞҊ ਊ߹ب ޛѤী ؀ೠ ӝࠄ੿ࠁ ,х੿ಣоࢲ੿ࠁ ,੐؀ର੿ࠁ ,ӂܻઙܨ੿ࠁ ,ҕݒੌ੿, ੑ଴੉۱ ,઱઱੿ࠁ ,ߨੋഅട੿ࠁ੄ ࣁ࢚੿ܳࠁ ઁҕೞח ޛѤ੿ࠁઑഥ࠺ࢲझ( * ౵੉ॆ ೐۽Ӓ۔ਸ ాೠ ࠺ࢲझ ਃ୒ী ؀೧ ࠺ࢲझܳ ઁೠೞҊ ੓ण׮פ).API ࠺ࢲझ ࠁউ੸ਊ ӝࣿ ࣻળ࠺ࢲझ ੋૐ/ӂೠ[O] ࠺ࢲझ Key [ ] ੋૐࢲ( GPKI)[] Basic (ID/PW) [ ] হ਺ݫद૑ ߰ۨ  ঐഐച[  ] ੹੗ݺࢲ[ ] ঐഐച[O] হ਺੹࣠ ߰ۨ ঐഐച[O ] SSL[ ] হ਺ੋఠಕ੉झ ಴ળ[  ] SOAP 1.2(RPC-Encoded, Document Literal, Document Literal Wrapped)[ O ] REST (GET)[ ] RSS 1.0 [ ] RSS 2.0 [ ] Atom 1.0 [ ] ӝఋҮജ ؘ੉ఠ ಴ળ[ O ] XML[ ] JSON   [ ] MIME[ ] MTOMAPI ࠺ࢲझ ߓನ੿ࠁ࠺ࢲझ URLhttp://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc࠺ࢲझ WADLN/A࠺ࢲझ ߡ੹1.1࠺ࢲझ द੘ੌN/A࠺ࢲझ ߓನੌN/A࠺ࢲझ ੉۱୭ୡ ߓನݫद૑Үജਬഋ[O] Request-Response[ ] Publish-Subscribe[ ] Fire-and-Forgot[ ] Notiﬁcation࠺ࢲझ ઁҕ੗ৡࢎ٘࠺স୊ ٣૑ణഄन౱ / 051-794-4588ؘ੉ఠ јन઱ӝੌ 1ഥ-   -3
+
+[페이지 4]
+Open API ഝਊо੉٘ա.ࣁ࢚ӝמ ۾ݾ
+ా೤ਊޛ߹بѤ۾ݾઑഥ ࣁ࢚ӝמ ࣁݺੌߣ۲ഐAPIݺ(Ҵޙ)ࣁ࢚ӝݺמ(৔ޙ)ࣁ࢚ӝݺמ(Ҵޙ)1
+ޛѤ੿ࠁઑഥ࠺ࢲझgetUnifyUsageCltrా೤ਊޛ߹بѤ۾ݾઑഥ2getUnifyNewCltrListా೤۽࢜਍ޛѤ۾ݾઑഥ3getUnifyDeadlineCltrListా೤݃х੐ޛ߅Ѥ۾ݾઑഥ4getUnifyPrivateContractCltrListా೤ࣻ੄҅ডоޛמѤ۾ݾઑഥ5getUnifyDegression50PerCltrListా೤50%୓хޛѤ۾ݾઑഥ6getUnifyClickTop20CltrListా೤௿ܼ఑20ޛѤ۾ݾઑഥ7getUnifyInterestTop20CltrListా೤ҙब఑20ޛѤ۾ݾઑഥ8getUnifyUsageCltrBasicInfoDetailా೤ਊޛ߹بѤ ӝࠄ੿ࠁ ࣁ࢚ઑഥ9getUnifyUsageCltrEstimationInfoDetailా೤ਊޛ߹بѤ х੿ಣоࢲ੿ࠁ ࢚ࣁઑഥ10getUnifyUsageCltrRentalInfoDetailా೤ਊޛ߹بѤ ੐؀ର੿ࠁ ࣁ࢚ઑഥ11getUnifyUsageCltrRegisteredInfoDetailా೤ਊޛ߹بѤ ӂܻઙܨ੿ࠁ ࣁ࢚ઑഥ12getUnifyUsageCltrBidDateInfoDetailా೤ਊޛ߹بѤ ҕݒੌ੿ ࣁ࢚ઑഥ13getUnifyUsageCltrBidHistoryInfoDetailా೤ਊޛ߹بѤ ੑ଴੉۱ ࣁ࢚ઑഥ14getUnifyUsageCltrStockholderInfoDetailా೤ਊޛ߹بѤ ઱઱੿ࠁ ࣁ࢚ઑഥ15getUnifyUsageCltrCorporatebodyInfoDetailా೤ਊޛ߹بѤ ߨੋഅട੿ࠁ ࣁ࢚ઑഥ࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ1ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤ਊޛ߹بѤ۾ݾઑഥࣁ࢚ӝמ ݺࢸ୊ߑ࠙ध௏٘ ١ਸ ੉ਊ೧ ҕҊߣഐ, ҕߣݒഐ, ӝҙߣഐ, ӝҙݺ ,ޛѤߣഐ, ҕݒઑѤߣഐ, ޛѤ੉ߣ۱ഐ, ചݶӒܛ௏٘ ,ਊب ,ੑ଴ߣഐ, ޛѤݺ ,ޛѤҙߣܻഐ, ޛѤࣗ੤૑(૑ߣ ,)ޛѤࣗ੤૑(ݺ۽ب ,)ݺ۽ب ,Ѥߣޛഐ, ୊ߑ࠙ध௏٘ ,୊ߑ࠙ध, ੑ଴ߑध, ୭੷ੑ଴о, ಣӐх੿о, ୭੷ੑ଴оਯ, ੑ଴द੘ੌद, ੑ଴݃хੌद, ޛѤ࢚క, ਬ଴പࣻ ,ઑഥࣻ ,ޛѤࣁ࢚੿ࠁ ١ਸ ઑഥೞח ా೤ਊޛ߹بѤ۾ݾઑഥ ӝמCall Back URL/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltr୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]-   -4
+
+[페이지 5]
+Open API ഝਊо੉٘˝ਃ୒ ݫद૑ ࣁݺ
+ - - 5
+
+[페이지 6]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐDPSL_MTD_CD୊ߑ࠙ध௏٘VARCHAR2(4)000010001 ݒп 0002 ੐؀(ࠗ؀)CTGR_HIRK_ID஠పҊ࢚ܻਤIDVARCHAR2(20)030100௏٘ઑഥ য়ಌۨ੉࣌ ଵઑCTGR_HIRK_ID_MID஠పҊ࢚ܻਤID(઺р)VARCHAR2(20)010100௏٘ઑഥ য়ಌۨ੉࣌ ଵઑSIDOޛѤࣗ੤૑(दب)VARCHAR2(100)0࢚҃թبޛѤࣗ੤૑(दب)SGKޛѤࣗ੤૑(दҵҳ)VARCHAR2(100)0ా৔दޛѤࣗ੤૑(दҵҳ)EMDޛѤࣗ੤૑(਻زݶ)VARCHAR2(100)0࢑ন਻ޛѤࣗ੤૑(਻زݶ)GOODS_PRICE_FROMх੿оೞೠNUMBER(20)0522740000х੿оೞೠGOODS_PRICE_TOх੿о࢚ೠNUMBER(20)0617393000х੿о࢚ೠOPEN_PRICE_FROM୭੷ੑ଴оೞೠNUMBER(20)0522740000୭੷ੑ଴оೞೠOPEN_PRICE_TO୭੷ੑ଴о࢚ೠNUMBER(20)0617393000୭੷ੑ଴о࢚ೠCLTR_NMޛѤݺVARCHAR2(500)0୽թ ୌউद࠘ࢲҳ ׼ࠛز 6 8 4  ৻ 1೙૑ झ஠੉ఋਕ ઁ3க ઁ301ഐޛѤݺPBCT_BEGN_DTMੑ଴ੌ੗ FromVARCHAR2(8)020170113YYYYMMDD(ੑ଴݃хੌ੗о ૑դ ҕݒী ؀೧חࢲ ઑഥо غ૑ ঋण׮פ).PBCT_CLS_DTMੑ଴ੌ੗ ToVARCHAR2(8)020170113YYYYMMDDORG_NMӝҙݺVARCHAR2(100)0೧নജ҃ҙܻҕױ ࢑؀૑ࢎӝҙݺ - - 6
+
+[페이지 7]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)ORG_BASE_NOӝҙߣഐVARCHAR2(10)010000ӝҙߣഐCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(50)02009-00042-001ޛѤҙߣܻഐ
+-   -7
+
+[페이지 8]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+ - - 8
+
+[페이지 9]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2010ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨ Ѥࣻ708ઑഥؘ੉ఠ੄ ୨ ѤࣻRNUMߣࣽ711ߣࣽPLNM_NOҕҊߣഐNUMBER(22)1394790ҕҊߣഐPBCT_NOҕߣݒഐNUMBER(22)19238013ҕߣݒഐORG_BASE_NOӝҙߣഐVARCHAR2(100)1159791ӝҙߣഐORG_NMӝҙݺVARCHAR2(100)1ৡҵਘ٘ӝҙݺCLTR_NOޛѤߣഐNUMBER(22)11120369ޛѤߣഐPBCT_CDTN_NOҕݒઑѤߣഐNUMBER(22)11510854ҕݒઑѤߣഐCLTR_HSTR_NOޛѤ੉ߣ۱ഐNUMBER(22)12448338ޛѤ੉ߣ۱ഐSCRN_GRP_CDചݶӒܛ௏٘VARCHAR2(4)10003ചݶӒܛ௏٘CTGR_FULL_NMਊبVARCHAR2(100)1ష૑ / ؀૑ਊبBID_MNMT_NOੑ଴ߣഐVARCHAR2(50)112549ੑ଴ߣഐCLTR_NMޛѤݺVARCHAR2(1000)1ࢲ਎ౠ߹द ࣠౵ҳ ࢳୣز 242-15 ૞ైܻ ؀૑ޛѤݺCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(50)12016-0500-000201ޛѤҙߣܻഐLDNM_ADRSޛѤࣗ੤૑(૑ߣ)VARCHAR2(1000)1ࢲ਎ౠ߹द ࣠౵ҳ ࢳୣز 242-15 ૞ైܻޛѤࣗ੤૑(૑ߣ)NMRD_ADRSޛѤࣗ੤૑(ݺ۽ب)VARCHAR2(1000)1ࢲ਎ౠ߹द ࣠౵ҳ о۽ۅ5ӡ 7-19, ૞ైܻ (ࢳୣز ,ؘ܃ਘ࠽٘)ޛѤࣗ੤૑(۽بݺ) - - 9
+
+[페이지 10]
+Open API ഝਊо੉٘ROD_NMݺ۽بVARCHAR2(100)1о۽ۅ5ӡݺ۽بBLD_NOѤߣޛഐVARCHAR2(100)17-19ѤߣޛഐDPSL_MTD_CD୊ߑ࠙ध௏٘VARCHAR2(10)100020001 ݒп0002 ੐؀DPSL_MTD_NM୊ߑ࠙धVARCHAR2(100)1੐؀(ࠗ؀)୊ߑ࠙धBID_MTD_NMੑ଴ߑधVARCHAR2(100)1ੌ߈҃੬(୭Ҋоߑध) / ୨ঘੑ଴ߑधMIN_BID_PRC୭੷ੑ଴оVARCHAR2(20)1࠺ҕѐ୭੷ੑ଴оAPSL_ASES_AVG_AMTಣӐх੿оVARCHAR2(20)1700000000000ಣӐх੿оFEE_RATE୭੷ੑ଴оਯVARCHAR2(10)1(50%)୭੷ੑ଴оਯPBCT_BEGN_DTMੑ଴द੘ੌदVARCHAR2(14)120160518112000YYYYMMDDHH24MISSPBCT_CLS_DTMੑ଴݃хੌदVARCHAR2(14)120160531160000YYYYMMDDHH24MISSPBCT_CLTR_STAT_NMޛѤ࢚కVARCHAR2(100)1ੋఠ֔ੑ଴૓೯઺ޛѤ࢚కUSCBD_CNTਬ଴പࣻNUMBER(22)10ਬ଴പࣻIQRY_CNTઑഥࣻNUMBER(22)19ઑഥࣻGOODS_NMޛѤࣁ࢚੿ࠁVARCHAR2(4000)1ష૑ 1 0 0 0 0ɝ ,  Ѥޛ  , -ӝఋࢎ೦ޛѤࣁ࢚੿ࠁMANFઁઑࢎVARCHAR2(100)0ӝইઁઑࢎMDL؛ݽVARCHAR2(100)0K7؛ݽNRGTোਘधVARCHAR2(100)02010োਘधGRBXࣘ߸ӝVARCHAR2(100)0੗زࣘ߸ӝENDPCߓӝ۝VARCHAR2(100)014618ߓӝ۝VHCL_MLGE઱೯ѢܻVARCHAR2(100)025548઱೯ѢܻFUELোܐVARCHAR2(100)0ൃߊਬোܐSCRT_NMૐӂݺVARCHAR2(100)0࢑ࠗद౭ైযߡझ(BUTI)ૐӂݺTPBZসઙVARCHAR2(100)0Ҏ੤, ج߷ ߂ दݭ౟ ݒبসসઙITM_NMઙݺݾVARCHAR2(100)0ਭ૑Ѥࢸ(઱)ઙݺݾMMB_RGT_NMഥਗӂݺVARCHAR2(100)0؀਋Әъ࢑ ௑بഥਗӂ8ഥਗӂݺ - - 10
+
+[페이지 11]
+Open API ഝਊо੉٘※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)
+-   -11
+
+[페이지 12]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -12
+
+[페이지 13]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltr?serviceKey=࠺ࢲझః&pageNo=1&numOfRows=1&DPSL_MTD_CD=0002਽׹ ݫद૑
+-   -13
+
+[페이지 14]
+Open API ഝਊо੉٘?<xml version="1.0" encoding="UTF-8"?>-<response>-<header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header>-<body>-<items>-<item><RNUM>1</RNUM><PLNM_NO>394790</PLNM_NO><PBCT_NO>9238013</PBCT_NO><ORG_BASE_NO>159791</ORG_BASE_NO><ORG_NM>ৡҵਘ٘/<ORG_NM><CLTR_NO>1120369</CLTR_NO><CTGR_FULL_NM>ష૑ / ؀૑</CTGR_FULL_NM><BID_MNMT_NO>0001</BID_MNMT_NO><CLTR_NM>ࢲ਎ౠ߹द ࣠౵ҳ ࢳୣز 242-15 ૞ైܻ ؀૑</CLTR_NM><CLTR_MNMT_NO>2016-0500-000201</CLTR_MNMT_NO><LDNM_ADRS>ࢲ਎ౠ߹द ࣠౵ҳ ࢳୣز 242-15 ૞ైܻ/<LDNM_ADRS><NMRD_ADRS>ࢲ਎ౠ߹द ࣠౵ҳ о۽ۅ5ӡ 7-19, ૞ైܻ( ࢳୣز ,ؘ܃ਘ࠽٘/<)NMRD_ADRS><ROD_NM>о۽ۅ5ӡ</ROD_NM><BLD_NO>7-19</BLD_NO><DPSL_MTD_CD>0002</DPSL_MTD_CD><DPSL_MTD_NM>੐؀(ࠗ؀/<)DPSL_MTD_NM><BID_MTD_NM>ੌ߈҃੬(୭Ҋоߑध) / ୨ঘ</BID_MTD_NM><MIN_BID_PRC>࠺ҕѐ</MIN_BID_PRC><APSL_ASES_AVG_AMT>700000000000</APSL_ASES_AVG_AMT>-   -14
+
+[페이지 15]
+Open API ഝਊо੉٘2)ా೤۽࢜਍ޛѤ۾ݾઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ2ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤۽࢜਍ޛѤ۾ݾઑഥࣁ࢚ӝמ ݺࢸ୊ߑ࠙ध௏٘ ١ਸ ੉ਊ೧ ҕҊߣഐ, ҕߣݒഐ, ޛѤߣഐ, ҕݒઑѤߣഐ, ޛѤ੉ߣ۱ഐ, ചݶӒܛ௏٘ ,ਊب௏٘ ,ਊب ,ੑ଴ߣഐ, ޛѤݺ ,ޛѤҙߣܻഐ, ޛѤࣗ੤૑(૑ߣ ,)ޛѤࣗ੤૑(ݺ۽ب ,)୊ߑ࠙ध௏٘ ,୊ߑ࠙ध, ੑ଴ߑध, ୭੷ੑ଴о, х੿о, ୭੷ੑ଴оਯ, ੑ଴द੘ੌद, ੑ଴݃хੌद, ޛѤ࢚క, ਬ଴പࣻ ,ઑഥࣻ ١ਸ ઑഥೞח ా೤۽࢜਍ޛѤ۾ݾઑഥ ӝמ※ ৡ٘࠺ ా೤ Ѩ࢝ੌ੗ܳ ӝળਵ۽ ੑ଴ੌ੗о 1઱ ੉ղੋ ۾ݾ੿ܳࠁ ઑഥೠ׮( .ױ ,੿ࠗ੤࢑੿ࠁҕѐޛѤ ߂ ૒ѢޛېѤ ١਷ ઁ৻)Call Back URL/openapi/services/ThingInfoInquireSvc/getUnifyNewCltrList୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]
+-   -15
+
+[페이지 16]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐDPSL_MTD_CD୊ߑ࠙ध௏٘VARCHAR2(4)100010001 ݒп 0002 ੐؀(ࠗ؀)CTGR_HIRK_ID஠పҊ࢚ܻਤIDVARCHAR2(20)030100௏٘ઑഥ য়ಌۨ੉࣌ ଵઑCTGR_HIRK_ID_MID஠పҊ࢚ܻਤID(઺р)VARCHAR2(20)010100௏٘ઑഥ য়ಌۨ੉࣌ ଵઑSIDOޛѤࣗ੤૑(दب)VARCHAR2(100)0୽୒թبޛѤࣗ੤૑(दب)SGKޛѤࣗ੤૑(दҵҳ)VARCHAR2(100)0కউҵޛѤࣗ੤૑(दҵҳ)EMDޛѤࣗ੤૑(਻زݶ)VARCHAR2(100)0ҊթݶޛѤࣗ੤૑(਻زݶ)GOODS_PRICE_FROMх੿оೞೠNUMBER(20)0522740000х੿оೞೠGOODS_PRICE_TOх੿о࢚ೠNUMBER(20)0617393000х੿о࢚ೠOPEN_PRICE_FROM୭੷ੑ଴оೞೠNUMBER(20)0522740000୭੷ੑ଴оೞೠOPEN_PRICE_TO୭੷ੑ଴о࢚ೠNUMBER(20)0617393000୭੷ੑ଴о࢚ೠCLTR_NMޛѤݺVARCHAR2(500)0୽թ ୌউदزթҳ ೂࣁݶ ܻࢿࠁ 76-1ޛѤݺPBCT_BEGN_DTMੑ଴ੌ੗ FromVARCHAR2(8)020171010YYYYMMDDPBCT_CLS_DTMੑ଴ੌ੗ ToVARCHAR2(8)020171010YYYYMMDDCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(50)02017-00003-001ޛѤҙߣܻഐ-   -16
+
+[페이지 17]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+ - - 17
+
+[페이지 18]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2010ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ701699ઑഥؘ੉ఠ੄ ୨ѤࣻPLNM_NOҕҊߣഐNUMBER(22)1395350ҕҊߣഐPBCT_NOҕߣݒഐNUMBER(22)19238934ҕߣݒഐCLTR_NOޛѤߣഐNUMBER(22)11121280ޛѤߣഐPBCT_CDTN_NOҕݒઑѤߣഐNUMBER(22)11527037ҕݒઑѤߣഐCLTR_HSTR_NOޛѤ੉ߣ۱ഐNUMBER(22)12448389ޛѤ੉ߣ۱ഐSCRN_GRP_CDചݶӒܛ௏٘VARCHAR2(4)10001ചݶӒܛ௏٘CTGR_IDਊب௏٘VARCHAR2(20)112102ਊب௏٘CTGR_FULL_NMਊبVARCHAR2(500)1੗زର / SUVਊبBID_MNMT_NOੑ଴ߣഐVARCHAR2(100)123065ੑ଴ߣഐCLTR_NMޛѤݺVARCHAR2(500)1അ؀ थ೤ର ࢑ఋಕ2015 3000ccޛѤݺCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(100)12015-18248-010ޛѤҙߣܻഐLDNM_ADRSޛѤࣗ੤૑(૑ߣ)VARCHAR2(1000)1؀੹ҟ৉द ࢲҳ ֙݅ز 396 1ޛѤࣗ੤૑(૑ߣ)NMRD_ADRSޛѤࣗ੤૑(ݺ۽ب)VARCHAR2(1000)1؀੹ҟ৉द ࢲҳ ࢑ك۽؀ 1 3 5 ,  1  (ز֙݅ ,؀੹৘ࣿ੄੹׼)ޛѤࣗ੤૑(۽بݺ)DPSL_MTD_CD୊ߑ࠙ध௏٘VARCHAR2(500)100010001 ݒп0002 ੐؀DPSL_MTD_NM୊ߑ࠙धVARCHAR2(500)1ݒп୊ߑ࠙ध-   -18
+
+[페이지 19]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)BID_MTD_NMੑ଴ߑधVARCHAR2(500)1ੌ߈҃੬(୭Ҋоߑध) / ୨ঘੑ଴ߑधMIN_BID_PRC୭੷ੑ଴оNUMBER(22)120000000୭੷ੑ଴оAPSL_ASES_AVG_AMTх੿оNUMBER(22)120000000х੿оFEE_RATE୭੷ੑ଴оਯVARCHAR(20)1(100%)୭੷ੑ଴оਯPBCT_BEGN_DTMੑ଴द੘ੌदVARCHAR2(14)120160519093000YYYYMMDDHH24MISSPBCT_CLS_DTMੑ଴݃хੌदVARCHAR2(14)20160519160000YYYYMMDDHH24MISSPBCT_CLTR_STAT_NMޛѤ࢚కVARCHAR2(100)1ੋఠ֔ੑ଴૓೯઺ޛѤ࢚కUSCBD_CNTਬ଴പࣻNUMBER(22)10ਬ଴പࣻIQRY_CNTઑഥࣻNUMBER(22)17ઑഥࣻGOODS_NMޛѤࣁ࢚੿ࠁVARCHAR2(4000)0थ೤ର, ࢎҊ੉۱হ਺ ࢚కই઱જ਺ޛѤࣁ࢚੿ࠁMANFઁઑࢎVARCHAR2(200)0അ؀ઁઑࢎMDL؛ݽVARCHAR2(500)0e ࢑ఋಕ2015؛ݽNRGTোधVARCHAR2(4)0e 2015োधGRBXࣘ߸ӝVARCHAR2(200)0e য়షࣘ߸ӝENDPCߓӝ۝NUMBER(22)0e 3,000ccߓӝ۝VHCL_MLGE઱೯ѢܻNUMBER(22)0e 12,000km઱೯ѢܻFUELোܐVARCHAR2(200)0e ҃ਬোܐSCRT_NMૐӂݺVARCHAR2(500)0(઱)അ૓ ࢚࠺੢ ୹੗੹ജ઱ध eૐӂݺTPBZসઙVARCHAR2(100)0࢑স೒ے౟ ѤࢸসসઙITM_NMઙݺݾVARCHAR2(500)0ਭ૑Ѥࢸ(઱)ઙݺݾMMB_RGT_NMഥਗӂݺVARCHAR2(200)0Әഐࢸঈܻઑ౟ ߨੋഥਗӂഥਗӂݺ
+ - - 19
+
+[페이지 20]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -20
+
+[페이지 21]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyNewCltrList?serviceKey=࠺ࢲझః&pageNo=1&numOfRows=1&DPSL_MTD_CD=0001਽׹ ݫद૑
+-   -21
+
+[페이지 22]
+Open API ഝਊо੉٘?<xml version="1.0" encoding="UTF-8"?>-<response>-<header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header>-<body>-<items>-<item><RNUM>1</RNUM><PLNM_NO>395350</PLNM_NO><PBCT_NO>9238934</PBCT_NO><CLTR_NO>1121280</CLTR_NO><CTGR_ID>12102</CTGR_ID><CTGR_FULL_NM>੗زର / SUV</CTGR_FULL_NM><BID_MNMT_NO>0001</BID_MNMT_NO><CLTR_NM>അ؀ थ೤ର ࢑ఋಕ2015 3000cc</CLTR_NM><CLTR_MNMT_NO>2016-0500-000234</CLTR_MNMT_NO><LDNM_ADRS>؀੹ҟ৉द ࢲҳ ز֙݅ 396 1</LDNM_ADRS><NMRD_ADRS>؀੹ҟ৉द ࢲҳ ۽؀࢑ك 135, 1 (ز֙݅ ,؀੹৘ࣿ੄੹׼/<)NMRD_ADRS><DPSL_MTD_CD>0001</DPSL_MTD_CD><DPSL_MTD_NM>ݒп</DPSL_MTD_NM><BID_MTD_NM>ੌ߈҃੬(୭Ҋоߑध) / ୨ঘ</BID_MTD_NM><MIN_BID_PRC>20000000</MIN_BID_PRC><APSL_ASES_AVG_AMT>20000000</APSL_ASES_AVG_AMT><FEE_RATE>(100%)</FEE_RATE><PBCT_BEGN_DTM>20160519093000</PBCT_BEGN_DTM><PBCT_CLS_DTM>20160519160000</PBCT_CLS_DTM>-   -22
+
+[페이지 23]
+Open API ഝਊо੉٘3)ా೤݃х੐ޛ߅Ѥ۾ݾઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ3ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤݃х੐ޛ߅Ѥ۾ݾઑഥࣁ࢚ӝמ ݺࢸ୊ߑ࠙ध௏٘ ١ਸ ੉ਊ೧ ҕҊߣഐ, ҕߣݒഐ, ޛѤߣഐ, ҕݒઑѤߣഐ, ޛѤ੉ߣ۱ഐ, ചݶӒܛ௏٘ ,ਊب௏٘ ,ਊب ,ੑ଴ߣഐ, ޛѤݺ ,ޛѤҙߣܻഐ, ޛѤࣗ੤૑(૑ߣ ,)ޛѤࣗ੤૑(ݺ۽ب ,)୊ߑ࠙ध௏٘ ,୊ߑ࠙ध, ੑ଴ߑध, ୭੷ੑ଴о, х੿о, ୭੷ੑ଴оਯ, ੑ଴द੘ੌद, ੑ଴݃хੌद, ޛѤ࢚క, ਬ଴പࣻ ,ઑഥࣻ ١ਸ ઑഥೞח ా೤݃х੐ޛ߅Ѥ۾ݾઑഥ ӝמ※ ৡ٘࠺ ా೤ ੑ଴݃хੌ੗о 48दр ੉ղੋ ۾ݾ੿ܳࠁ ઑഥೠ׮( .ױ ,੿ࠗ੤࢑੿ࠁҕѐޛѤ ߂ ૒ѢޛېѤ ١਷ ઁ৻)Call Back URL/openapi/services/ThingInfoInquireSvc/getUnifyDeadlineCltrList୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]
+-   -23
+
+[페이지 24]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐDPSL_MTD_CD୊ߑ࠙ध௏٘VARCHAR2(4)100010001 ݒп 0002 ੐؀(ࠗ؀)CTGR_HIRK_ID஠పҊ࢚ܻਤIDVARCHAR2(20)030100௏٘ઑഥ য়ಌۨ੉࣌ ଵઑCTGR_HIRK_ID_MID஠పҊ࢚ܻਤID(઺р)VARCHAR2(20)010100௏٘ઑഥ য়ಌۨ੉࣌ ଵઑSIDOޛѤࣗ੤૑(दب)VARCHAR2(100)0ࢲ਎ౠ߹दޛѤࣗ੤૑(दب)SGKޛѤࣗ੤૑(दҵҳ)VARCHAR2(100)0ъթҳޛѤࣗ੤૑(दҵҳ)EMDޛѤࣗ੤૑(਻زݶ)VARCHAR2(100)0ѐನزޛѤࣗ੤૑(਻زݶ)GOODS_PRICE_FROMх੿оೞೠNUMBER(20)0522740000х੿оೞೠGOODS_PRICE_TOх੿о࢚ೠNUMBER(20)0617393000х੿о࢚ೠOPEN_PRICE_FROM୭੷ੑ଴оೞೠNUMBER(20)0522740000୭੷ੑ଴оೞೠOPEN_PRICE_TO୭੷ੑ଴о࢚ೠNUMBER(20)0617393000୭੷ੑ଴о࢚ೠCLTR_NMޛѤݺVARCHAR2(500)0ъਗ ഘୌҵ ݶࢲ ౹ܻࠉ 1290-2 ৻ 2೙૑ ݺ؀ഘୌ1ର௑޷بפষ ઁ8க ઁ808ഐ(1/10૑࠙)ޛѤݺPBCT_BEGN_DTMੑ଴ੌ੗ FromVARCHAR2(8)020171210YYYYMMDDPBCT_CLS_DTMੑ଴ੌ੗ ToVARCHAR2(8)020171210YYYYMMDD-   -24
+
+[페이지 25]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)CLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(50)02017-00010-001ޛѤҙߣܻഐ
+-   -25
+
+[페이지 26]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+ - - 26
+
+[페이지 27]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2010ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ7077ઑഥؘ੉ఠ੄ ୨ѤࣻPLNM_NOҕҊߣഐNUMBER(22)1394737ҕҊߣഐPBCT_NOҕߣݒഐNUMBER(22)1438692ҕߣݒഐCLTR_NOޛѤߣഐNUMBER(22)11117893ޛѤߣഐPBCT_CDTN_NOҕݒઑѤߣഐNUMBER(22)12562219ҕݒઑѤߣഐCLTR_HSTR_NOޛѤ੉ߣ۱ഐNUMBER(22)12449084ޛѤ੉ߣ۱ഐSCRN_GRP_CDചݶӒܛ௏٘VARCHAR2(4)10003ചݶӒܛ௏٘CTGR_IDਊب௏٘VARCHAR2(20)110301ਊب௏٘CTGR_FULL_NMਊبVARCHAR2(500)1࢚оਊ߂সޖਊѤޛ / ӔࢤܽഝदࢸਊبBID_MNMT_NOੑ଴ߣഐVARCHAR2(100)126460ੑ଴ߣഐCLTR_NMޛѤݺVARCHAR2(500)1ҟ઱ҟ৉दبद୍ب 1ഐࢶ Әթ۽4о৉ 105-16ഐ ੼ನޛѤݺCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(100)12016-0511-001110ޛѤҙߣܻഐLDNM_ADRSޛѤࣗ੤૑(૑ߣ)VARCHAR2(1000)1ҟ઱ زҳ Әթ۽4о 105ߣ૑ ૑ೞ210ޛѤࣗ੤૑(૑ߣ)NMRD_ADRSޛѤࣗ੤૑(ݺ۽ب)VARCHAR2(1000)1ҟ઱ҟ৉द زҳ Әթ۽ 210, ૑ೞ210 ( Әթ۽4о ,  Әթ۽4о৉ )ޛѤࣗ੤૑(۽بݺ) - - 27
+
+[페이지 28]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)DPSL_MTD_CD୊ߑ࠙ध௏٘VARCHAR2(500)100010001 ݒп0002 ੐؀DPSL_MTD_NM୊ߑ࠙धVARCHAR2(500)1੐؀(ࠗ؀)୊ߑ࠙धBID_MTD_NMੑ଴ߑधVARCHAR2(500)1ੌ߈҃੬(୭Ҋоߑध) / ୨ঘੑ଴ߑधMIN_BID_PRC୭੷ੑ଴оNUMBER(22)14440000୭੷ੑ଴оAPSL_ASES_AVG_AMTх੿оNUMBER(22)137320000х੿оFEE_RATE୭੷ੑ଴оਯVARCHAR(20)1(60%)୭੷ੑ଴оਯPBCT_BEGN_DTMੑ଴द੘ੌदVARCHAR2(14)120160513100000YYYYMMDDHH24MISSPBCT_CLS_DTMੑ଴݃хੌदVARCHAR2(14)120160519160000YYYYMMDDHH24MISSPBCT_CLTR_STAT_NMޛѤ࢚కVARCHAR2(100)1ੋఠ֔ੑ଴૓೯઺ޛѤ࢚కUSCBD_CNTਬ଴പࣻNUMBER(22)11ਬ଴പࣻIQRY_CNTઑഥࣻNUMBER(22)128ઑഥࣻGOODS_NMޛѤࣁ࢚੿ࠁVARCHAR2(4000)0ష૑ 1 6 . 1ɝ ,  Ѥޛ 16.1ɝޛѤࣁ࢚੿ࠁMANFઁઑࢎVARCHAR2(200)0അ؀ઁઑࢎMDL؛ݽVARCHAR2(500)0e ࢑ఋಕ2015؛ݽNRGTোधVARCHAR2(4)0e 2015োधGRBXࣘ߸ӝVARCHAR2(200)0e য়షࣘ߸ӝENDPCߓӝ۝NUMBER(22)0e 3,000ccߓӝ۝VHCL_MLGE઱೯ѢܻNUMBER(22)0e 12,000km઱೯ѢܻFUELোܐVARCHAR2(200)0e ҃ਬোܐSCRT_NMૐӂݺVARCHAR2(500)0(઱)അ૓ ࢚࠺੢ ୹੗੹ജ઱ध eૐӂݺTPBZসઙVARCHAR2(100)0࢑স೒ے౟ ѤࢸসসઙITM_NMઙݺݾVARCHAR2(500)0ਭ૑Ѥࢸ(઱)ઙݺݾMMB_RGT_NMഥਗӂݺVARCHAR2(200)0Әഐࢸঈܻઑ౟ ߨੋഥਗӂഥਗӂݺ
+ - - 28
+
+[페이지 29]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -29
+
+[페이지 30]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyDeadlineCltrList?serviceKey=࠺ࢲझః&pageNo=1&numOfRows=1&DPSL_MTD_CD=0002਽׹ ݫद૑
+-   -30
+
+[페이지 31]
+Open API ഝਊо੉٘?<xml version="1.0" encoding="UTF-8"?>-<response>-<header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header>-<body>-<items>-<item><RNUM>1</RNUM><PLNM_NO>394737</PLNM_NO><PBCT_NO>438692</PBCT_NO><CLTR_NO>1117893</CLTR_NO><CTGR_ID>10301</CTGR_ID><CTGR_FULL_NM>࢚оਊ߂সޖਊѤޛ / Ӕࢤܽഝदࢸ/<CTGR_FULL_NM><BID_MNMT_NO>002</BID_MNMT_NO><CLTR_NM>ҟ઱ҟ৉दبद୍ب 1ഐࢶ Әթ۽4о৉ 105-16ഐ ੼ನ</CLTR_NM><CLTR_MNMT_NO>2016-0511-001110</CLTR_MNMT_NO><LDNM_ADRS>ҟ઱ زҳ Әթ۽4о 105ߣ૑ ૑ೞ210</LDNM_ADRS><NMRD_ADRS>ҟ઱ҟ৉द زҳ Әթ۽ 210, ૑ೞ210 ( Әթ۽4о , Әթ۽4о৉ )</NMRD_ADRS><DPSL_MTD_CD>0002</DPSL_MTD_CD><DPSL_MTD_NM>੐؀(ࠗ؀/<)DPSL_MTD_NM><BID_MTD_NM>ੌ߈҃੬(୭Ҋоߑध) / ୨ঘ</BID_MTD_NM><MIN_BID_PRC>4440000</MIN_BID_PRC><APSL_ASES_AVG_AMT>-</APSL_ASES_AVG_AMT><FEE_RATE>-</FEE_RATE><PBCT_BEGN_DTM>20160513100000</PBCT_BEGN_DTM><PBCT_CLS_DTM>20160519160000</PBCT_CLS_DTM>-   -31
+
+[페이지 32]
+Open API ഝਊо੉٘4)ా೤ࣻ੄҅ডоޛמѤ۾ݾઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ4ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤ࣻ੄҅ডоޛמѤ۾ݾઑഥࣁ࢚ӝמ ݺࢸ୊ߑ࠙ध௏٘ ١ਸ ੉ਊ೧ ҕҊߣഐ, ҕߣݒഐ, ޛѤߣഐ, ҕݒઑѤߣഐ, ޛѤ੉ߣ۱ഐ, ചݶӒܛ௏٘ ,ਊب௏٘ ,ਊب ,ੑ଴ߣഐ, ޛѤݺ ,ޛѤҙߣܻഐ, ޛѤࣗ੤૑(૑ߣ ,)ޛѤࣗ੤૑(ݺ۽ب ,)୊ߑ࠙ध௏٘ ,୊ߑ࠙ध, ੑ଴ߑध, ୭੷ੑ଴о, х੿о, ୭੷ੑ଴оਯ, ੑ଴द੘ੌद, ੑ଴݃хੌद, ޛѤ࢚క, ਬ଴പࣻ ,ઑഥࣻ ١ਸ ઑഥೞח ా೤ࣻ੄҅ডоޛמѤ۾ݾઑഥ ӝמ※ ৡ٘࠺ ా೤ ࣻ੄҅ডоޛמѤ ۾ݾ੿ܳࠁ ઑഥೠ׮( .҃੬ੑ଴ী ੄ೞ૑ ইפೞҊ, ݒпӝҙ੉ ੐੄۽ ੸׼ೠ ؀࢚੗৬ ҅ডਸ ୓Ѿೡ ࣻ ੓ח ޛѤ)Call Back URL/openapi/services/ThingInfoInquireSvc/getUnifyPrivateContractCltrList୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]
+-   -32
+
+[페이지 33]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐDPSL_MTD_CD୊ߑ࠙ध௏٘VARCHAR2(4)100010001 ݒп 0002 ੐؀(ࠗ؀)CTGR_HIRK_ID஠పҊ࢚ܻਤIDVARCHAR2(20)030100௏٘ઑഥ য়ಌۨ੉࣌ ଵઑCTGR_HIRK_ID_MID஠పҊ࢚ܻਤID(઺р)VARCHAR2(20)010100௏٘ઑഥ য়ಌۨ੉࣌ ଵઑSIDOޛѤࣗ੤૑(दب)VARCHAR2(100)0ࢲ਎ౠ߹दޛѤࣗ੤૑(दب)SGKޛѤࣗ੤૑(दҵҳ)VARCHAR2(100)0ъթҳޛѤࣗ੤૑(दҵҳ)EMDޛѤࣗ੤૑(਻زݶ)VARCHAR2(100)0ѐನزޛѤࣗ੤૑(਻زݶ)GOODS_PRICE_FROMх੿оೞೠNUMBER(20)0522740000х੿оೞೠGOODS_PRICE_TOх੿о࢚ೠNUMBER(20)0617393000х੿о࢚ೠOPEN_PRICE_FROM୭੷ੑ଴оೞೠNUMBER(20)0522740000୭੷ੑ଴оೞೠOPEN_PRICE_TO୭੷ੑ଴о࢚ೠNUMBER(20)0617393000୭੷ੑ଴о࢚ೠCLTR_NMޛѤݺVARCHAR2(500)0୽թ ୌউद࠘ࢲҳ ׼ࠛز 6 8 4  ৻ 1೙૑ झ஠੉ఋਕ ઁ3க ઁ301ഐޛѤݺCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(50)02015-19932-001ޛѤҙߣܻഐ
+-   -33
+
+[페이지 34]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+ - - 34
+
+[페이지 35]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2010ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ701ઑഥؘ੉ఠ੄ ୨ѤࣻPLNM_NOҕҊߣഐNUMBER(22)1390290ҕҊߣഐPBCT_NOҕߣݒഐNUMBER(22)1433418ҕߣݒഐCLTR_NOޛѤߣഐNUMBER(22)11058503ޛѤߣഐPBCT_CDTN_NOҕݒઑѤߣഐNUMBER(22)12569645ҕݒઑѤߣഐCLTR_HSTR_NOޛѤ੉ߣ۱ഐNUMBER(22)12449024ޛѤ੉ߣ۱ഐSCRN_GRP_CDചݶӒܛ௏٘VARCHAR2(4)10001ചݶӒܛ௏٘CTGR_IDਊب௏٘VARCHAR2(20)110128ਊب௏٘CTGR_FULL_NMਊبVARCHAR2(500)1ష૑ / ޑ૑ਊبBID_MNMT_NOੑ଴ߣഐVARCHAR2(100)128755ੑ଴ߣഐCLTR_NMޛѤݺVARCHAR2(500)1҃թ ӣ೧द ೠݶܿ উೞܻ ࢑63ߣ૑ ࢑63 ޑ૑ޛѤݺCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(100)12015-0811-001356ޛѤҙߣܻഐLDNM_ADRSޛѤࣗ੤૑(૑ߣ)VARCHAR2(1000)1҃թ ӣ೧द ೠݶܿ উೞܻ ࢑63ߣ૑ ࢑63ޛѤࣗ੤૑(૑ߣ)NMRD_ADRSޛѤࣗ੤૑(۽بݺ)VARCHAR2(1000)1ࢲ਎ౠ߹द ز੘ҳ ੢थߓӝ۽ 1 6 1 ,  ( ۝֢૓ز , ز੘ҳ୒ )ޛѤࣗ੤૑(بݺ۽)DPSL_MTD_CD୊ߑ࠙ध௏٘VARCHAR2(500)100010001 ݒп0002 ੐؀ - - 35
+
+[페이지 36]
+Open API ഝਊо੉٘DPSL_MTD_NM୊ߑ࠙धVARCHAR2(500)1ݒп୊ߑ࠙धBID_MTD_NMੑ଴ߑधVARCHAR2(500)1ࣻ੄҅ড(୭Ҋоߑध) / ୨ঘੑ଴ߑधMIN_BID_PRC୭੷ੑ଴оNUMBER(22)127000000୭੷ੑ଴оAPSL_ASES_AVG_AMTх੿оNUMBER(22)11036260000х੿оFEE_RATE୭੷ੑ଴оਯVARCHAR(20)1(5%)୭੷ੑ଴оਯPBCT_BEGN_DTMੑ଴द੘ੌदVARCHAR2(14)120160408100000YYYYMMDDHH24MISSPBCT_CLS_DTMੑ଴݃хੌदVARCHAR2(14)120160527140000YYYYMMDDHH24MISSPBCT_CLTR_STAT_NMޛѤ࢚కVARCHAR2(100)1അ੢ੑ଴݃хޛѤ࢚కUSCBD_CNTਬ଴പࣻNUMBER(22)1e3ਬ଴പࣻIQRY_CNTઑഥࣻNUMBER(22)1e522ઑഥࣻGOODS_NMޛѤࣁ࢚੿ࠁVARCHAR2(4000)0 ޑ૑ 1,587 ɝޛѤࣁ࢚੿ࠁMANFઁઑࢎVARCHAR2(200)0അ؀ઁઑࢎMDL؛ݽVARCHAR2(500)0e ࢑ఋಕ2015؛ݽNRGTোधVARCHAR2(4)0e 2015োधGRBXࣘ߸ӝVARCHAR2(200)0e য়షࣘ߸ӝENDPCߓӝ۝NUMBER(22)0e 3,000ccߓӝ۝VHCL_MLGE઱೯ѢܻNUMBER(22)0e 12,000km઱೯ѢܻFUELোܐVARCHAR2(200)0e ҃ਬোܐSCRT_NMૐӂݺVARCHAR2(500)0(઱)അ૓ ࢚࠺੢ ୹੗੹ജ઱ध eૐӂݺTPBZসઙVARCHAR2(100)0࢑স೒ے౟ ѤࢸসসઙITM_NMઙݺݾVARCHAR2(500)0ਭ૑Ѥࢸ(઱)ઙݺݾ - - 36
+
+[페이지 37]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)MMB_RGT_NMഥਗӂݺVARCHAR2(200)0Әഐࢸঈܻઑ౟ ߨੋഥਗӂഥਗӂݺ
+ - - 37
+
+[페이지 38]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -38
+
+[페이지 39]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyPrivateContractCltrList?serviceKey=࠺ࢲझః&pageNo=1&numOfRows=1&DPSL_MTD_CD=0001਽׹ ݫद૑
+-   -39
+
+[페이지 40]
+Open API ഝਊо੉٘?<xml version="1.0" encoding="UTF-8"?>-<response>-<header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header>-<body>-<items>-<item><RNUM>1</RNUM><PLNM_NO>390290</PLNM_NO><PBCT_NO>433418</PBCT_NO><CLTR_NO>1058503</CLTR_NO><CTGR_ID>10128</CTGR_ID><CTGR_FULL_NM>ష૑ / ޑ૑</CTGR_FULL_NM><BID_MNMT_NO>04</BID_MNMT_NO><CLTR_NM>҃թ ӣ೧द ೠݶܿ উೞܻ ࢑63ߣ૑ ࢑63 ޑ૑</CLTR_NM><CLTR_MNMT_NO>2015-0811-001356</CLTR_MNMT_NO><LDNM_ADRS>҃թ ӣ೧द ೠݶܿ উೞܻ ࢑63ߣ૑ ࢑63</LDNM_ADRS><NMRD_ADRS/><DPSL_MTD_CD>0001</DPSL_MTD_CD><DPSL_MTD_NM>ݒп</DPSL_MTD_NM><BID_MTD_NM>ࣻ੄҅ড(୭Ҋоߑध) / ୨ঘ</BID_MTD_NM><MIN_BID_PRC>27000000</MIN_BID_PRC><APSL_ASES_AVG_AMT>-</APSL_ASES_AVG_AMT><FEE_RATE>-</FEE_RATE><PBCT_BEGN_DTM>20160408100000</PBCT_BEGN_DTM><PBCT_CLS_DTM>20160527140000</PBCT_CLS_DTM>-   -40
+
+[페이지 41]
+Open API ഝਊо੉٘5)ా೤50%୓хޛѤ۾ݾઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ5ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤50%୓хޛѤ۾ݾઑഥࣁ࢚ӝמ ݺࢸ஠పҊ࢚ܻਤID, ޛѤࣗ੤૑(दب ,)ޛѤࣗ੤૑(दҵҳ), ޛѤࣗ੤૑(਻زݶ ,)х੿о ೞೠ, х੿о ࢚ೠ, ୭੷ੑ଴о ೞೠ, ୭੷ੑ଴о ࢚ೠ, ޛѤݺ ,ੑ଴ੌ੗FROM, ੑ଴ੌ੗TO, ޛѤҙߣܻഐܳ ੉ਊ೧ ҕҊߣഐ, ҕߣݒഐ, ޛѤߣഐ, ҕݒઑѤߣഐ, ޛѤ੉ߣ۱ഐ, ചݶӒܛ௏٘ ,ਊب௏٘ ,ਊب ,ੑ଴ߣഐ, ޛѤݺ ,ޛѤҙߣܻഐ, ޛѤࣗ੤૑(૑ߣ ,)ޛѤࣗ੤૑(ݺ۽ب ,)୊ߑ࠙ध௏٘ ,୊ߑ࠙ध, ੑ଴ߑध, ୭੷ੑ଴о, х੿о, ୭੷ੑ଴оਯ, ੑ଴द੘ੌद, ੑ଴݃хੌद, ޛѤ࢚క, ਬ଴പࣻ ,ઑഥࣻ ١ਸ ઑഥೞח ా೤50%୓хޛѤ۾ݾઑഥ ӝמ※ ৡ٘࠺ ా೤ ୭੷ੑ଴оо х੿ಣоӘঘ חژ ୭ୡ৘੿о ࠺؀ 50%੉ೞ۽ ୓хػ ޛѤ ۾ݾ੿ܳࠁ ઑഥೠ׮.Call Back URL/openapi/services/ThingInfoInquireSvc/getUnifyDegression50PerCltrList୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]
+-   -41
+
+[페이지 42]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐCTGR_HIRK_ID஠పҊ࢚ܻਤIDVARCHAR2(20)030100௏٘ઑഥ য়ಌۨ੉࣌ ଵઑSIDOޛѤࣗ੤૑(दب)VARCHAR2(100)0ࢲ਎ౠ߹दޛѤࣗ੤૑(दب)SGKޛѤࣗ੤૑(दҵҳ)VARCHAR2(100)0ъթҳޛѤࣗ੤૑(दҵҳ)EMDޛѤࣗ੤૑(਻زݶ)VARCHAR2(100)0ѐನزޛѤࣗ੤૑(਻زݶ)GOODS_PRICE_FROMх੿о ೞೠNUMBER(20)0522740000х੿о ೞೠGOODS_PRICE_TOх੿о ࢚ೠNUMBER(20)0617393000х੿о ࢚ೠOPEN_PRICE_FROM୭੷ੑ଴о ೞೠNUMBER(20)0522740000୭੷ੑ଴о ೞೠOPEN_PRICE_TO୭੷ੑ଴о ࢚ೠNUMBER(20)0617393000୭੷ੑ଴о ࢚ೠCLTR_NMޛѤݺVARCHAR2(500)0ъਗ ഘୌҵ ݶࢲ ౹ܻࠉ 1290-2 ৻ 2೙૑ ݺ؀ഘୌ1ର௑޷بפষ ઁ8க ઁ808ഐ(1/10૑࠙)ޛѤݺPBCT_BEGN_DTMੑ଴ੌ੗FROMVARCHAR2(8)020171202YYYYMMDDPBCT_CLS_DTMੑ଴ੌ੗TOVARCHAR2(8)020171202YYYYMMDDCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(50)02015-19919-001ޛѤҙߣܻഐ
+-   -42
+
+[페이지 43]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+ - - 43
+
+[페이지 44]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ201ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ701ઑഥؘ੉ఠ੄ ୨ѤࣻPLNM_NOҕҊߣഐNUMBER(22)1390403ҕҊߣഐPBCT_NOҕߣݒഐNUMBER(22)1430159ҕߣݒഐCLTR_NOޛѤߣഐNUMBER(22)11027091ޛѤߣഐPBCT_CDTN_NOҕݒઑѤߣഐNUMBER(22)12522474ҕݒઑѤߣഐCLTR_HSTR_NOޛѤ੉ߣ۱ഐNUMBER(22)12448383ޛѤ੉ߣ۱ഐSCRN_GRP_CDചݶӒܛ௏٘VARCHAR2(4)10002ചݶӒܛ௏٘CTGR_IDਊب௏٘VARCHAR2(20)111201ਊب௏٘CTGR_FULL_NMਊبVARCHAR2(500)1ਬоૐӂ /  ਬоૐӂ(઱ध, ଻ӂ ١)ਊبBID_MNMT_NOੑ଴ߣഐVARCHAR2(100)12201505439001ੑ଴ߣഐCLTR_NMޛѤݺVARCHAR2(500)1਎࢑ թҳ ৈୌز 1394 కъ୍੤ā ࠺࢚੢઱ध 2,700઱ޛѤݺCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(100)12015-05439-001ޛѤҙߣܻഐLDNM_ADRSޛѤࣗ੤૑(૑ߣ)VARCHAR2(1000)1਎࢑ թҳ ৈୌز 1394 కъ୍੤ā ࠺࢚੢઱ध 2,700઱ޛѤࣗ੤૑(૑ߣ)NMRD_ADRSޛѤࣗ੤૑(۽بݺ)VARCHAR2(1000)1਎࢑ҟ৉द թҳ ੢ࢤನ۽19ߣӡ 18 కъ୍੤ā ࢚࠺੢઱ध 2,700઱(ৈୌز)ޛѤࣗ੤૑(بݺ۽)DPSL_MTD_CD୊ߑ࠙ध௏٘VARCHAR2(500)10001୊ߑ࠙ध௏٘DPSL_MTD_NM୊ߑ࠙धVARCHAR2(500)1ݒп୊ߑ࠙ध-   -44
+
+[페이지 45]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)BID_MTD_NMੑ଴ߑधVARCHAR2(500)1୭Ҋоߑधੑ଴ߑधMIN_BID_PRC୭੷ੑ଴оNUMBER(22)1103734000୭੷ੑ଴оAPSL_ASES_AVG_AMTх੿оNUMBER(22)1414936000х੿оFEE_RATE୭੷ੑ଴оਯVARCHAR(20)1(25%)୭੷ੑ଴оਯPBCT_BEGN_DTMੑ଴द੘ੌदVARCHAR2(14)120160613100000YYYYMMDDHH24MISSPBCT_CLS_DTMੑ଴݃хੌदVARCHAR2(14)120160615170000YYYYMMDDHH24MISSPBCT_CLTR_STAT_NMޛѤ࢚కVARCHAR2(100)1ੑ଴ળ࠺઺ޛѤ࢚కUSCBD_CNTਬ଴പࣻNUMBER(22)112ਬ଴പࣻIQRY_CNTઑഥࣻNUMBER(22)170ઑഥࣻGOODS_NMޛѤࣁ࢚੿ࠁVARCHAR2(4000)0઱ध 2,700 ઱ޛѤࣁ࢚੿ࠁMANFઁઑࢎVARCHAR2(200)0അ؀ઁઑࢎMDL؛ݽVARCHAR2(500)0e ࢑ఋಕ2015؛ݽNRGTোधVARCHAR2(4)0e 2015োधGRBXࣘ߸ӝVARCHAR2(200)0e য়షࣘ߸ӝENDPCߓӝ۝NUMBER(22)0e 3,000ccߓӝ۝VHCL_MLGE઱೯ѢܻNUMBER(22)0e 12,000km઱೯ѢܻFUELোܐVARCHAR2(200)0e ҃ਬোܐSCRT_NMૐӂݺVARCHAR2(500)0(઱)അ૓ ࢚࠺੢ ୹੗੹ജ઱ध eૐӂݺTPBZসઙVARCHAR2(100)0࢑স೒ے౟ ѤࢸসসઙITM_NMઙݺݾVARCHAR2(500)0ਭ૑Ѥࢸ(઱)ઙݺݾMMB_RGT_NMഥਗӂݺVARCHAR2(200)0Әഐࢸঈܻઑ౟ ߨੋഥਗӂഥਗӂݺ
+ - - 45
+
+[페이지 46]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -46
+
+[페이지 47]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyDegression50PerCltrList?serviceKey=࠺ࢲझః&pageNo=1&numOfRows=1਽׹ ݫद૑
+-   -47
+
+[페이지 48]
+Open API ഝਊо੉٘ <?xml version="1.0" encoding="UTF-8"?>-<response>-<header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header>-<body>-<items>-<item><RNUM>1</RNUM><PLNM_NO>390403</PLNM_NO><PBCT_NO>430159</PBCT_NO><CLTR_NO>1027091</CLTR_NO><CTGR_ID>11201</CTGR_ID><CTGR_FULL_NM>ਬоૐӂ / ਬоૐӂ(઱ध, ଻ӂ ١/<)CTGR_FULL_NM><BID_MNMT_NO>2201505439001</BID_MNMT_NO><CLTR_NM>਎࢑ թҳ ৈୌز 1394 కъ୍੤ā ࢚࠺੢઱ध 2,700઱</CLTR_NM><CLTR_MNMT_NO>2015-05439-001</CLTR_MNMT_NO><LDNM_ADRS>਎࢑ թҳ ৈୌز 1394 కъ୍੤ā ࢚࠺੢઱ध 2,700઱</LDNM_ADRS><NMRD_ADRS>਎࢑ҟ৉द թҳ ੢ࢤನ۽19ߣӡ 18 కъ୍੤ā ࢚࠺੢઱ध 2,700઱(ৈୌز/<)NMRD_ADRS><DPSL_MTD_CD>0001</DPSL_MTD_CD><DPSL_MTD_NM>ݒп</DPSL_MTD_NM><BID_MTD_NM>୭Ҋоߑध</BID_MTD_NM><MIN_BID_PRC>103734000</MIN_BID_PRC><APSL_ASES_AVG_AMT>414936000</APSL_ASES_AVG_AMT><FEE_RATE>(25%)</FEE_RATE><PBCT_BEGN_DTM>20160613100000</PBCT_BEGN_DTM><PBCT_CLS_DTM>20160615170000</PBCT_CLS_DTM>-   -48
+
+[페이지 49]
+Open API ഝਊо੉٘6)ా೤௿ܼ఑20ޛѤ۾ݾઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ6ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤௿ܼ఑20ޛѤ۾ݾઑഥࣁ࢚ӝמ ݺࢸޛѤઙܨ௏ܳ٘ ੉ਊ೧ ҕҊߣഐ, ҕߣݒഐ, ޛѤߣഐ, ҕݒઑѤߣഐ, ޛѤ੉ߣ۱ഐ, ചݶӒܛ௏٘ ,ਊب௏٘ ,ਊب ,ੑ଴ߣഐ, ޛѤݺ ,ޛѤҙߣܻഐ, ޛѤࣗ੤૑(૑ߣ ,)ޛѤࣗ੤૑(ݺ۽ب ,)୊ߑ࠙ध௏٘ ,୊ߑ࠙ध, ੑ଴ߑध, ୭੷ੑ଴о, х੿о, ୭੷ੑ଴оਯ, ੑ଴द੘ੌद, ੑ଴݃хੌद, ޛѤ࢚క, ਬ଴പࣻ ,ઑഥࣻ ١ਸ ઑഥೞח ా೤௿ܼ఑20ޛѤݾ۾ઑഥ ӝמ※ ৡ٘࠺ ా೤ ઑഥࣻо о੢ ݆਷ ࢚ਤ 20ѐ ޛѤ ۾ݾ੿ܳࠁ ઑഥೠ׮( .ࣻ੄҅ড ࢚؀ ޛѤ ઁ৻, ઑഥࣻ 50ഥ ੉࢚)Call Back URL/openapi/services/ThingInfoInquireSvc/getUnifyClickTop20CltrList୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐCTGR_TYPE_IDޛѤઙܨ௏٘VARCHAR2(4)000040001 ࢑زࠗ0002 ੗زର/਍࣠੢࠺0003 ޛಿ(ӝ҅)0004 ޛಿ(ӝఋ)0005 ӂܻ/ૐӂ
+-   -49
+
+[페이지 50]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+ - - 50
+
+[페이지 51]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2020ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ701ઑഥؘ੉ఠ੄ ୨ѤࣻPLNM_NOҕҊߣഐNUMBER(22)1389216ҕҊߣഐPBCT_NOҕߣݒഐNUMBER(22)1428516ҕߣݒഐCLTR_NOޛѤߣഐNUMBER(22)1967763ޛѤߣഐPBCT_CDTN_NOҕݒઑѤߣഐNUMBER(22)12522481ҕݒઑѤߣഐCLTR_HSTR_NOޛѤ੉ߣ۱ഐNUMBER(22)12448391ޛѤ੉ߣ۱ഐSCRN_GRP_CDചݶӒܛ௏٘VARCHAR2(4)10002ചݶӒܛ௏٘CTGR_IDਊب௏٘VARCHAR2(20)110101ਊب௏٘CTGR_FULL_NMਊبVARCHAR2(500)1ష૑ / ؀૑ਊبBID_MNMT_NOੑ଴ߣഐVARCHAR2(100)12201419128001ੑ଴ߣഐCLTR_NMޛѤݺVARCHAR2(500)1ઁ઱ ઁ઱द ೠܿ਻ ਘܻܿ 283ޛѤݺCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(100)12014-19128-001ޛѤҙߣܻഐLDNM_ADRSޛѤࣗ੤૑(૑ߣ)VARCHAR2(1000)1ઁ઱ ઁ઱द ೠܿ਻ ਘܻܿ 283ޛѤࣗ੤૑(૑ߣ)NMRD_ADRSޛѤࣗ੤૑(ݺ۽ب)VARCHAR2(1000)1ઁ઱ౠ߹੗஖ب ઁ઱द ೠܿ਻ ઺࢑р۽ࢲ 3879-5 (ਘܻܿ)ޛѤࣗ੤૑(بݺ۽)DPSL_MTD_CD୊ߑ࠙ध௏٘VARCHAR2(4)10001୊ߑ࠙ध௏٘DPSL_MTD_NM୊ߑ࠙धVARCHAR2(500)1ݒп୊ߑ࠙धBID_MTD_NMੑ଴ߑधVARCHAR2(500)1୭Ҋоߑधੑ଴ߑध-   -51
+
+[페이지 52]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)MIN_BID_PRC୭੷ੑ଴оNUMBER(22)1102426000୭੷ੑ଴оAPSL_ASES_AVG_AMTх੿оNUMBER(22)110000000х੿оFEE_RATE୭੷ੑ଴оਯVARCHAR(20)1(100%)୭੷ੑ଴оਯPBCT_BEGN_DTMੑ଴द੘ੌदVARCHAR2(14)120160530100000YYYYMMDDHH24MISSPBCT_CLS_DTMੑ଴݃хੌदVARCHAR2(14)120160601170000YYYYMMDDHH24MISSPBCT_CLTR_STAT_NMޛѤ࢚కVARCHAR2(100)1ੑ଴ળ࠺઺ޛѤ࢚కUSCBD_CNTਬ଴പࣻNUMBER(22)10ਬ଴പࣻIQRY_CNTઑഥࣻNUMBER(22)11687ઑഥࣻGOODS_NMޛѤࣁ࢚੿ࠁVARCHAR2(4000)0؀ 7 9 4  ɝ ,  ӝఋ(ౠӝ)ࢎ೦ : ೧ࢎ׼೦ হ਺.ޛѤࣁ࢚੿ࠁMANFઁઑࢎVARCHAR2(200)0അ؀ઁઑࢎMDL؛ݽVARCHAR2(500)0e ࢑ఋಕ2015؛ݽNRGTোधVARCHAR2(4)0e 2015োधGRBXࣘ߸ӝVARCHAR2(200)0e য়షࣘ߸ӝENDPCߓӝ۝NUMBER(22)0e 3,000ccߓӝ۝VHCL_MLGE઱೯ѢܻNUMBER(22)0e 12,000km઱೯ѢܻFUELোܐVARCHAR2(200)0e ҃ਬোܐSCRT_NMૐӂݺVARCHAR2(500)0(઱)അ૓ ࢚࠺੢ ୹੗੹ജ઱ध eૐӂݺTPBZসઙVARCHAR2(100)0࢑স೒ے౟ ѤࢸসসઙITM_NMઙݺݾVARCHAR2(500)0ਭ૑Ѥࢸ(઱)ઙݺݾMMB_RGT_NMഥਗӂݺVARCHAR2(200)0Әഐࢸঈܻઑ౟ ߨੋഥਗӂഥਗӂݺ
+ - - 52
+
+[페이지 53]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -53
+
+[페이지 54]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyClickTop20CltrList?serviceKey=ࢲ࠺झః&pageNo=1&numOfRows=1਽׹ ݫद૑
+-   -54
+
+[페이지 55]
+Open API ഝਊо੉٘ <?xml version="1.0" encoding="UTF-8"?>-<response>-<header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header>-<body>-<items>-<item><RNUM>1</RNUM><PLNM_NO>389216</PLNM_NO><PBCT_NO>428516</PBCT_NO><CLTR_NO>967763</CLTR_NO><CTGR_ID>10101</CTGR_ID><CTGR_FULL_NM>ష૑ / ؀૑</CTGR_FULL_NM><BID_MNMT_NO>2201419128001</BID_MNMT_NO><CLTR_NM>ઁ઱ ઁ઱द ೠܿ਻ ਘܻܿ 283</CLTR_NM><CLTR_MNMT_NO>2014-19128-001</CLTR_MNMT_NO><LDNM_ADRS>ઁ઱ ઁ઱द ೠܿ਻ ਘܻܿ 283</LDNM_ADRS><NMRD_ADRS>ઁ઱ౠ߹੗஖ب ઁ઱द ೠܿ਻ ઺࢑р۽ࢲ 3879-5 (ਘܻܿ/<)NMRD_ADRS><DPSL_MTD_CD>0001</DPSL_MTD_CD><DPSL_MTD_NM>ݒп</DPSL_MTD_NM><BID_MTD_NM>୭Ҋоߑध</BID_MTD_NM><MIN_BID_PRC>102426000</MIN_BID_PRC><APSL_ASES_AVG_AMT>102426000</APSL_ASES_AVG_AMT><FEE_RATE>(100%)</FEE_RATE><PBCT_BEGN_DTM>20160530100000</PBCT_BEGN_DTM><PBCT_CLS_DTM>20160601170000</PBCT_CLS_DTM>-   -55
+
+[페이지 56]
+Open API ഝਊо੉٘7)ా೤ҙब఑20ޛѤ۾ݾઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ7ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤ҙब఑20ޛѤ۾ݾઑഥࣁ࢚ӝמ ݺࢸޛѤઙܨ௏ܳ٘ ੉ਊ೧ ҕҊߣഐ, ҕߣݒഐ, ޛѤߣഐ, ҕݒઑѤߣഐ, ޛѤ੉ߣ۱ഐ, ചݶӒܛ௏٘ ,ਊب௏٘ ,ਊب ,ੑ଴ߣഐ, ޛѤݺ ,ޛѤҙߣܻഐ, ޛѤࣗ੤૑(૑ߣ ,)ޛѤࣗ੤૑(ݺ۽ب ,)୊ߑ࠙ध௏٘ ,୊ߑ࠙ध, ੑ଴ߑध, ୭੷ੑ଴о, х੿о, ୭੷ੑ଴оਯ, ੑ଴द੘ੌद, ੑ଴݃хੌद, ޛѤ࢚క, ਬ଴പࣻ ,ઑഥࣻ ١ਸ ઑഥೞח ా೤ҙब఑20ޛѤݾ۾ઑഥ ӝמ※ ৡ٘࠺ ా೤ ҙबޛѤਵ۽ ݆੉ ػ۾١ ࢚ਤ 20ѐ ޛѤ ۾ݾ੿ܳࠁ ઑഥೠ׮.Call Back URL/openapi/services/ThingInfoInquireSvc/getUnifyInterestTop20CltrList୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐCTGR_TYPE_IDޛѤઙܨ௏٘VARCHAR2(20)000030001 ࢑زࠗ0002 ੗زର/਍࣠੢࠺0003 ޛಿ(ӝ҅)0004 ޛಿ(ӝఋ)0005 ӂܻ/ૐӂ
+-   -56
+
+[페이지 57]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+ - - 57
+
+[페이지 58]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2020ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ7020ઑഥؘ੉ఠ੄ ୨ѤࣻPLNM_NOҕҊߣഐNUMBER(22)1394537ҕҊߣഐPBCT_NOҕߣݒഐNUMBER(22)1438449ҕߣݒഐCLTR_NOޛѤߣഐNUMBER(22)1756956ޛѤߣഐPBCT_CDTN_NOҕݒઑѤߣഐNUMBER(22)12522482ҕݒઑѤߣഐCLTR_HSTR_NOޛѤ੉ߣ۱ഐNUMBER(22)12448664ޛѤ੉ߣ۱ഐSCRN_GRP_CDചݶӒܛ௏٘VARCHAR2(4)10003ചݶӒܛ௏٘CTGR_IDਊب௏٘VARCHAR2(20)110201ਊب௏٘CTGR_FULL_NMਊبVARCHAR2(500)1઱ѢਊѤޛ / ই౵౟ਊبBID_MNMT_NOੑ଴ߣഐVARCHAR2(100)1012ੑ଴ߣഐCLTR_NMޛѤݺVARCHAR2(500)1؀੹ ؋؀ҳ ؀ചز 229-12ߣ૑ ੢޷ই౵౟ 3-504ޛѤݺCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(100)12012-00034-001ޛѤҙߣܻഐLDNM_ADRSޛѤࣗ੤૑(૑ߣ)VARCHAR2(1000)1؀੹ ؋؀ҳ ؀ചز 229-12ߣ૑ ੢޷ই౵౟ 3-504ޛѤࣗ੤૑(૑ߣ)NMRD_ADRSޛѤࣗ੤૑(بݺ۽)VARCHAR2(1000)1؀੹ҟ৉द ؋؀ҳ زब5ӡ 1 6  ੢޷ই౵౟ 3 - 5 0 4 (؀ചز ,੢޷ই౵౟)ޛѤࣗ੤૑(۽بݺ)DPSL_MTD_CD୊ߑ࠙ध௏٘VARCHAR2(4)10001୊ߑ࠙ध௏٘DPSL_MTD_NM୊ߑ࠙धVARCHAR2(500)1ݒп୊ߑ࠙ध-   -58
+
+[페이지 59]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)BID_MTD_NMੑ଴ߑधVARCHAR2(500)1୭Ҋоߑधੑ଴ߑधMIN_BID_PRC୭੷ੑ଴оNUMBER(22)167000000୭੷ੑ଴оAPSL_ASES_AVG_AMTх੿оNUMBER(22)167000000х੿оFEE_RATE୭੷ੑ଴оਯVARCHAR(20)1(100%)୭੷ੑ଴оਯPBCT_BEGN_DTMੑ଴द੘ੌदVARCHAR2(14)120160524100000YYYYMMDDHH24MISSPBCT_CLS_DTMੑ଴݃хੌदVARCHAR2(14)120160526170000YYYYMMDDHH24MISSPBCT_CLTR_STAT_NMޛѤ࢚కVARCHAR2(100)1ੑ଴ળ࠺઺ޛѤ࢚కUSCBD_CNTਬ଴പࣻNUMBER(22)148ਬ଴പࣻIQRY_CNTઑഥࣻNUMBER(22)1496ઑഥࣻGOODS_NMޛѤࣁ࢚੿ࠁVARCHAR2(4000)0Ѥޛ 6 0 . 1 2  ɝ, ؀૑ 43.27 ɝ ૑࠙ޛѤࣁ࢚੿ࠁMANFઁઑࢎVARCHAR2(200)0അ؀ઁઑࢎMDL؛ݽVARCHAR2(500)0e ࢑ఋಕ2015؛ݽNRGTোधVARCHAR2(4)0e 2015োधGRBXࣘ߸ӝVARCHAR2(200)0e য়షࣘ߸ӝENDPCߓӝ۝NUMBER(22)0e 3,000ccߓӝ۝VHCL_MLGE઱೯ѢܻNUMBER(22)0e 12,000km઱೯ѢܻFUELোܐVARCHAR2(200)0e ҃ਬোܐSCRT_NMૐӂݺVARCHAR2(500)0(઱)അ૓ ࢚࠺੢ ୹੗੹ജ઱ध eૐӂݺTPBZসઙVARCHAR2(100)0࢑স೒ے౟ ѤࢸসসઙITM_NMઙݺݾVARCHAR2(500)0ਭ૑Ѥࢸ(઱)ઙݺݾMMB_RGT_NMഥਗӂݺVARCHAR2(200)0Әഐࢸঈܻઑ౟ ߨੋഥਗӂഥਗӂݺ
+ - - 59
+
+[페이지 60]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -60
+
+[페이지 61]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyInterestTop20CltrList?serviceKey=࠺ࢲझః&pageNo=1&numOfRows=1਽׹ ݫद૑
+-   -61
+
+[페이지 62]
+Open API ഝਊо੉٘ <?xml version="1.0" encoding="UTF-8"?>-<response>-<header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header>-<body>-<items>-<item><RNUM>1</RNUM><PLNM_NO>394537</PLNM_NO><PBCT_NO>438449</PBCT_NO><CLTR_NO>756956</CLTR_NO><CTGR_ID>10201</CTGR_ID><CTGR_FULL_NM>઱ѢਊѤޛ / ই౵౟</CTGR_FULL_NM><BID_MNMT_NO>012</BID_MNMT_NO><CLTR_NM>؀੹ ؋؀ҳ ؀ചز 229-12ߣ૑ ੢޷ই౵౟ 3-504</CLTR_NM><CLTR_MNMT_NO>2012-00034-001</CLTR_MNMT_NO><LDNM_ADRS>؀੹ ؋؀ҳ ؀ചز 229-12ߣ૑ ੢޷ই౵౟ 3-504</LDNM_ADRS><NMRD_ADRS>؀੹ҟ৉द ؋؀ҳ زब5ӡ 16 ੢޷ই౵౟ 3-504(؀ചز ,੢޷ই౵౟)</NMRD_ADRS><DPSL_MTD_NM>ݒп</DPSL_MTD_NM><BID_MTD_NM>୭Ҋоߑध</BID_MTD_NM><MIN_BID_PRC>67000000</MIN_BID_PRC><APSL_ASES_AVG_AMT>67000000</APSL_ASES_AVG_AMT><FEE_RATE>(100%)</FEE_RATE><PBCT_BEGN_DTM>20160524100000</PBCT_BEGN_DTM><PBCT_CLS_DTM>20160526170000</PBCT_CLS_DTM><PBCT_CLTR_STAT_NM>ੑ଴ળ࠺઺</PBCT_CLTR_STAT_NM>-   -62
+
+[페이지 63]
+Open API ഝਊо੉٘8)ా೤ਊޛ߹بѤ ӝࠄ੿ࠁ ࣁ࢚ઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ8ࣁ࢚ӝמ ਬഋઑഥ(ࣁ࢚)ࣁ࢚ӝݺמ(Ҵޙ)ా೤ਊޛ߹بѤ ӝࠄ੿ࠁ ࣁ࢚ઑഥࣁ࢚ӝמ ݺࢸҕߣݒഐ, ޛѤߣഐܳ ੉ਊ೧ ࢑زࠗ ,੗زର, ഥਗӂ ߂ ਬоૐӂ, ӝ҅ ߂ ੢ࠗ࠺ಿী ؀೧ ࣁ࢚ ઑഥೞח ా೤ਊޛ߹بѤ ӝࠄ੿ࠁ ࣁ࢚ઑഥ ӝמCall Back URL/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃCLTR_NOޛѤߣഐNUMBER(22)11226758ޛѤߣഐPBCT_NOҕߣݒഐNUMBER(22)19301922ҕߣݒഐ
+-   -63
+
+[페이지 64]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ( ࢑زࠗ)
+ - - 64
+
+[페이지 65]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑ӝࠄ੿ࠁCLTR_NMޛѤݺVARCHAR2(1000)1ъਗب ъܷद ࢿݶ࢑ ࠁҟܻ 930ޛѤݺCTGR_TYPE_NMޛѤઙܨVARCHAR2(100)1࢑زࠗޛѤઙܨDPSL_MTD_NM୊ߑ࠙धVARCHAR2(100)1ݒп୊ߑ࠙धPBCT_CLTR_STAT_NMޛѤ࢚కVARCHAR2(100)1ਬ଴ޛѤ࢚కӝҙ੿ࠁORG_NMੑ଴૘೯ӝҙVARCHAR2(100)1ೠҴ੗࢑ҙܻҕࢎੑ଴૘೯ӝҙRGST_DEPT_NMࢲࠗVARCHAR2(100)1ъਗ૑৉ࠗࠄࢲࠗPSCG_NM׼׸੗VARCHAR2(100)1ઑࣁ੿ܻ౱׼׸੗PSCG_TPNOোۅ୊VARCHAR2(50)1033-640-3418োۅ୊LDNM_ADRSޛѤࣗ੤૑(૑ߣ)VARCHAR2(1000)1ъਗب ъܷद ࢿݶ࢑ ࠁҟܻ 930ޛѤࣗ੤૑(૑ߣ)NMRD_ADRSޛѤࣗ੤૑(ݺ۽ب)VARCHAR2(1000)1؀੹ҟ৉द ਬࢿҳ ؀೟۽ 87, ౵ੋ٬࠽ 5க (Ҿز)ޛѤࣗ੤૑(بݺ۽)CLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(50)12017-10552-001ޛѤҙߣܻഐPRPT_DVSN_NM੤࢑ઙܨVARCHAR2(100)1঑ܨ੤࢑(஬௏)੤࢑ઙܨDLGT_ORG_NMਤ੐ӝҙVARCHAR2(100)1ъࢲޖࣁܷਤ੐ӝҙCTGR_FULL_NMਊبVARCHAR2(100)1ష૑ / ੹ਊبBID_MTD_NMੑ଴ߑधVARCHAR2(100)1ੌ߈҃੬(୭Ҋоߑध) / ୨ঘੑ଴ߑधLAND_SQMSష૑ݶ੸VARCHAR2(50)03326ɝష૑ݶ੸-   -65
+
+[페이지 66]
+Open API ഝਊо੉٘
+ޛѤ੿ࠁBLD_SQMSѤݶޛ੸VARCHAR2(50)0469.01Ѥݶޛ੸POSI_ENV_PSCDਤ஖ࠗ߂ӔഅടVARCHAR2(500)0ࠁҟزࠄҮ ࢲ࠘ஏ ੋӔী ਤ஖ೞݴ ࠗӔ਷ ੹ ߂ ੐ঠ ١੉ ઱۽ ࣗ੤ೞח ࢑р ֪҃૑؀੐. ର۝୹ੑ ࠛоמೞݴ ؀઺Үా ੉ਊ ژೠ ࠛಞೣ.ਤ஖ࠗ߂ӔഅടUTLZ_PSCD੉ਊഅടVARCHAR2(2000)0ޗ੹ ࢚క੉ݴ ࠙ޑ ࣻӝо ࣗ੤ೣ.੉ਊഅടETC_DTL_CNTNӝఋࢎ೦VARCHAR2(2000)0ӝળद੼ 2017.09.04ӝఋࢎ೦ATCT_IVST_DTઑࢎੌ੗VARCHAR2(8)020171029YYYYMMDDESCT_YNীझஸۨ੉ఠৈࠗVARCHAR2(1)0Nীझஸۨ੉ఠৈࠗELVT_YNथъӝৈࠗVARCHAR2(1)0NथъӝৈࠗSHR_YN૑࠙ৈࠗVARCHAR2(1)0N૑࠙ৈࠗPKLT_YN઱ର੢ৈࠗVARCHAR2(1)0N઱ର੢ৈࠗBLD_NMѤݺޛVARCHAR2(200)0ਊ࢑઺೟ҮѤݺޛDONGزVARCHAR2(50)0110زFLRகVARCHAR2(50)09கHOUSഐVARCHAR2(50)0201ഐQNTY۝ࣻNUMBER(22)03,326²۝ࣻMIN_BID_PRCੑ଴द੘оNUMBER(22)124945000ੑ଴द੘оPCMT_PYMT_EPDT_CNTN݅ӝੌVARCHAR2(400)130ੌ݅ӝੌ-   -66
+
+[페이지 67]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)ҕݒ੿ࠁBID_PRGN_NFTੑ଴ ഥࣻNUMBER(22)10ੑ଴ ഥࣻDLVR_RSBYبݺ଼੐VARCHAR2(200)0ࣻݒੋبݺ଼੐ICDL_CDTN؀ࠗઑѤVARCHAR2(2000)0բ଴੗ח ҅ড୓Ѿҗ زदী ޛಿ੄ ਍߈,୊ܻ ١੄ ࣗਃחغ ٚݽ ࠺ਊਸ ׸ࠗ ,߈୹җ੿ীࢲ ࢤߊೞח ੋ੸,ޛ੸ ೖ೧ী ؀ೠ ଼੐਷ فݽ բ଴੗оীѱ ੓ण׮פ.؀ࠗઑѤSHR_RQR_EPRT_DT࠙ߓਃҳઙӝVARCHAR2(8)020160222YYYYMMDD࢚ࣁ੿ࠁ ୨ ѤࣻtotalCountEstх੿ಣоࢲ ୨ Ѥࣻ701х੿ಣоࢲ ୨ ѤࣻtotalCountRental੐؀ର੿ࠁ ୨ Ѥࣻ701੐؀ର੿ࠁ ୨ ѤࣻtotalCountRegiӂܻઙܨ੿ࠁ ୨ Ѥࣻ701ӂܻઙܨ੿ࠁ ୨ ѤࣻtotalCountBidҕݒੌ੿ ୨ Ѥࣻ701ҕݒੌ੿ ୨ ѤࣻtotalCountBidHisੑ଴੉۱ ୨ Ѥࣻ701ੑ଴੉۱ ୨ Ѥࣻ
+ - - 67
+
+[페이지 68]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ(࢑زࠗ)
+ - - 68
+
+[페이지 69]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail?serviceKey=࠺ࢲझః&CLTR_NO=1226758&PBCT_NO=9301922਽׹ ݫद૑
+-   -69
+
+[페이지 70]
+Open API ഝਊо੉٘ <?xml version="1.0" encoding="UTF-8"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body>    <item><CLTR_NM>ъਗب ъܷद ݶ࢑ࢿ ࠁҟܻ 930</CLTR_NM><CTGR_TYPE_NM>࢑زࠗ/<CTGR_TYPE_NM>    <DPSL_MTD_NM>ݒп</DPSL_MTD_NM>    <PBCT_CLTR_STAT_NM>ਬ଴</PBCT_CLTR_STAT_NM><ORG_NM>ೠҴ੗࢑ҙܻҕࢎ/<ORG_NM><RGST_DEPT_NM>ъਗ૑৉ࠗࠄ/<RGST_DEPT_NM>    <PSCG_NM>ઑࣁ੿ܻ౱</PSCG_NM><PSCG_TPNO>033-640-3418</PSCG_TPNO><LDNM_ADRS>ъਗب ъܷद ݶ࢑ࢿ ࠁҟܻ 930</LDNM_ADRS><NMRD_ADRS> </NMRD_ADRS><CLTR_MNMT_NO>2017-10552-001</CLTR_MNMT_NO><PRPT_DVSN_NM>঑ܨ੤࢑(஬௏)</PRPT_DVSN_NM><DLGT_ORG_NM>ъࢲޖࣁܷ/<DLGT_ORG_NM><CTGR_FULL_NM>ష૑ / ੹</CTGR_FULL_NM><BID_MTD_NM>ੌ߈҃੬(୭Ҋоߑध) / ୨ঘ</BID_MTD_NM><LAND_SQMS>3326ɝ</LAND_SQMS><BLD_SQMS></BLD_SQMS><POSI_ENV_PSCD>ࠁҟزࠄҮ ࢲ࠘ஏ ੋӔী ਤ஖ೞݴ ࠗӔ਷ ੹ ߂ ੐ঠ ١੉ ઱۽ ࣗ੤ೞח ࢑р ֪҃૑؀੐. ର۝୹ੑ ࠛоמೞݴ ؀઺Үా ੉ਊ ژೠ ࠛಞೣ.</POSI_ENV_PSCD><UTLZ_PSCD>ޗ੹ ࢚క੉ݴ ޑ࠙ ࣻӝо ࣗ੤ೣ.</UTLZ_PSCD><ETC_DTL_CNTN>ӝળद੼ 2017.09.04</ETC_DTL_CNTN>-   -70
+
+[페이지 71]
+Open API ഝਊо੉٘˝਽׹ ݫद૑ ࣁݺ(੗زର)
+-   -71
+
+[페이지 72]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL SERVICE.Ѿҗݫद૑ӝࠄ੿ࠁCLTR_NMޛѤݺVARCHAR2(1000)1ੋୌҟ৉द ࢲҳ য়زܨ 1553 āয়ష݃౟ ੋୌࠁҙࣗ ղ ࠁҙ(80۞4261 2006֙ध झఋ۩झ ചޛ)ޛѤݺCTGR_TYPE_NMޛѤઙܨVARCHAR2(100)1੗زର/਍࣠੢࠺ޛѤઙܨDPSL_MTD_NM୊ߑ࠙धVARCHAR2(100)1ݒп୊ߑ࠙धPBCT_CLTR_STAT_NMޛѤ࢚కVARCHAR2(100)1ੋఠ֔ੑ଴૓೯઺ޛѤ࢚కӝҙ੿ࠁORG_NMੑ଴૘೯ӝҙVARCHAR2(100)1ೠҴ੗࢑ҙܻҕࢎੑ଴૘೯ӝҙRGST_DEPT_NMࢲࠗVARCHAR2(100)1ࢲ਎ࠗز૑৉ࠗࠄࢲࠗPSCG_NM׼׸੗VARCHAR2(100)1ઑࣁ੿ܻ2౱׼׸੗PSCG_TPNOোۅ୊VARCHAR2(50)102-3420-5481োۅ୊
+ޛѤ੿ࠁLDNM_ADRSޛѤࣗ੤૑(૑ߣ)VARCHAR2(1000)1ੋୌҟ৉द ࢲҳ য়زܨ 1553 āয়ష݃౟ ੋୌࠁҙࣗ ղ ࠁҙ(80۞4261 2006֙ध झఋ۩झ ചޛ) ޛѤࣗ੤૑(૑ߣ)NMRD_ADRSޛѤࣗ੤૑(ݺ۽ب)VARCHAR2(1000)1࢑ࠗҟ৉द ࢎೞҳ ۽؀׮ 499, ( ز؀׮ , ؀׮ୡ١೟Ү )ޛѤࣗ੤૑(ݺ۽ب)CLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(50)12017-10681-001ޛѤҙߣܻഐPRPT_DVSN_NM੤࢑ઙܨVARCHAR2(100)1঑ܨ੤࢑(஬௏)੤࢑ઙܨDLGT_ORG_NMਤ੐ӝҙVARCHAR2(100)1઺یҳ୒ਤ੐ӝҙCTGR_FULL_NMਊبVARCHAR2(100)1੗زର / ചޛରਊبBID_MTD_NMੑ଴ߑधVARCHAR2(10)1ੌ߈҃੬(୭Ҋоߑध) / ୨ঘੑ଴ߑधTFRT_PLNM_DT୭ୡҕҊੌ੗VARCHAR2(8)020170920୭ୡҕҊੌ੗GOODS_NMޛѤࣁ࢚੿ࠁVARCHAR2(4000)0थ೤ର, ࢎҊ੉۱হ਺ ࢚కই઱જ਺ޛѤࣁ࢚੿ࠁPOSI_ENV_PSCDਤ஖ࠗ߂ӔഅടVARCHAR2(500)0झఋ۩झର۝ 1 ؀ਤ஖ࠗ߂ӔഅടMANFઁઑࢎVARCHAR2(200)0അ؀੗زରઁઑࢎVHKNରઙVARCHAR2(500)0झఋ۩झରઙ-   -72
+
+[페이지 73]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)MDL؛ݽVARCHAR2(500)0झఋ۩झ؛ݽNRGTোधVARCHAR2(4)02006োधVHC_NOରߣ۝ഐVARCHAR2(2000)080۞4261ରߣ۝ഐCSTD_PLCࠁҙ੢ࣗVARCHAR2(500)0য়ష݃౟ ੋୌࠁҙࣗࠁҙ੢ࣗQNTY۝ࣻNUMBER(22)01؀۝ࣻVHCL_MLGE઱೯ѢܻNUMBER(22)0232,508km઱೯ѢܻGRBXࣘ߸ӝVARCHAR2(200)0য়షࣘ߸ӝENDPCߓӝ۝NUMBER(22)03,000ccߓӝ۝FUELোܐVARCHAR2(200)0҃ਬোܐDLVR_PLCੋب੢ࣗVARCHAR2(500)0ࢲ਎द ъ࠘ҳ য়അ۽ 103ੋب੢ࣗ
+ҕݒ੿ࠁMIN_BID_PRCੑ଴द੘оNUMBER(22)11000000ੑ଴द੘оPCMT_PYMT_EPDT_CNTN݅ӝੌVARCHAR2(400)130ੌ݅ӝੌBID_PRGN_NFTੑ଴ ഥࣻNUMBER(22)10ੑ଴ ഥࣻDLVR_RSBYبݺ଼੐VARCHAR2(200)0ࣻݒੋبݺ଼੐ICDL_CDTN؀ࠗઑѤVARCHAR2(2000)0١ӝࢎ೦੹ࠗૐ࢚ࢲݺ ࣗਬ੗৬ ૘೤Ѥ୷؀ޛ੢࢚ ࣗਬ੗о ࢚੉ೞ۽޲ ੑ଴੗଼੐ೞী ࢎ੹ઑࢎ റ ੑ଴ۈ߄2014/03/03؀ࠗઑѤSHR_RQR_EPRT_DT࠙ߓਃҳઙӝVARCHAR2(8)020171205࠙ߓਃҳઙӝ࢚ࣁ੿ࠁ ୨ ѤࣻtotalCountEstх੿ಣоࢲ ୨ Ѥࣻ701х੿ಣоࢲ ୨ ѤࣻtotalCountRental੐؀ର੿ࠁ ୨ Ѥࣻ701੐؀ର੿ࠁ ୨ ѤࣻtotalCountRegiӂܻઙܨ੿ࠁ ୨ Ѥࣻ701ӂܻઙܨ੿ࠁ ୨ ѤࣻtotalCountBidҕݒੌ੿ ୨ Ѥࣻ701ҕݒੌ੿ ୨ ѤࣻtotalCountBidHisੑ଴੉۱ ୨ Ѥࣻ701ੑ଴੉۱ ୨ Ѥࣻ - - 73
+
+[페이지 74]
+Open API ഝਊо੉٘˞ਃ୒ / ਽׹ ݫद૑ ৘ઁ(੗زର)
+-   -74
+
+[페이지 75]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail?serviceKey=࠺ࢲझః&CLTR_NO=1226073&PBCT_NO=9315274਽׹ ݫद૑
+-   -75
+
+[페이지 76]
+Open API ഝਊо੉٘?<xml version="1.0" encoding="UTF-8"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body>    <item><CLTR_NM>ੋୌҟ৉द ࢲҳ য়زܨ 1553 āয়ష݃౟ ੋୌࠁҙࣗ ղ ࠁҙ(80۞4261 2006֙ध झఋ۩झ ചޛ/<) CLTR_NM><CTGR_TYPE_NM>੗زର/਍࣠੢࠺/<CTGR_TYPE_NM>    <DPSL_MTD_NM>ݒп</DPSL_MTD_NM>    <PBCT_CLTR_STAT_NM>ੑ଴ળ࠺઺</PBCT_CLTR_STAT_NM><ORG_NM>ೠҴ੗࢑ҙܻҕࢎ/<ORG_NM><RGST_DEPT_NM>ࢲ਎ࠗز૑৉ࠗࠄ/<RGST_DEPT_NM>    <PSCG_NM>ઑࣁ੿ܻ2౱</PSCG_NM><PSCG_TPNO>02-3420-5481</PSCG_TPNO><LDNM_ADRS>ੋୌҟ৉द ࢲҳ য়زܨ 1 5 5 3  āয়ష݃౟ ੋୌࠁҙࣗ ղ ࠁҙ(80۞4261 2006֙ध झఋ۩झ ചޛ/<) LDNM_ADRS><NMRD_ADRS> </NMRD_ADRS><CLTR_MNMT_NO>2017-10681-001</CLTR_MNMT_NO><PRPT_DVSN_NM>঑ܨ੤࢑(஬௏)</PRPT_DVSN_NM><DLGT_ORG_NM>઺یҳ୒</DLGT_ORG_NM><CTGR_FULL_NM>੗زର / ചޛର</CTGR_FULL_NM><BID_MTD_NM>ੌ߈҃੬(୭Ҋоߑध) / ୨ঘ</BID_MTD_NM><TFRT_PLNM_DT>20170920</TFRT_PLNM_DT><GOODS_NM>झఋ۩झର۝ 1 ؀/< GOODS_NM><POSI_ENV_PSCD></POSI_ENV_PSCD><MANF>അ؀੗زର</MANF>-   -76
+
+[페이지 77]
+Open API ഝਊо੉٘˝਽׹ ݫद૑ ࣁݺ(ഥਗӂ ߂ ਬоૐӂ)
+-   -77
+
+[페이지 78]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL SERVICE.Ѿҗݫद૑ӝࠄ੿ࠁCLTR_NMޛѤݺVARCHAR2(1000)1੹ۄթب ചࣽҵ بҋݶ हৠܻ ࢑4-7 ചࣽஶ౟ܻ௿ۣ āઑ਷ডಿ Ҏ೐ഥਗӂ 1ҳઝ[ഥਗߣഐ:J04120415,ഥਗӂݺ:ചࣽஶ౟ܻ௿ۣ,ഥਗݺࢿ:āઑ਷ডಿ]ޛѤݺCTGR_TYPE_NMޛѤઙܨVARCHAR2(100)1ӂܻ·ૐӂޛѤઙܨDPSL_MTD_NM୊ߑ࠙धVARCHAR2(100)1ݒп୊ߑ࠙धPBCT_CLTR_STAT_NMޛѤ࢚కVARCHAR2(100)1ਬ଴ޛѤ࢚కӝҙ੿ࠁORG_NMੑ଴૘೯ӝҙVARCHAR2(100)1ೠҴ੗࢑ҙܻҕࢎੑ଴૘೯ӝҙRGST_DEPT_NMࢲࠗVARCHAR2(100)1ҟ઱੹թ૑৉ࠗࠄࢲࠗPSCG_NM׼׸੗VARCHAR2(100)1ઑࣁ੿ܻ౱׼׸੗PSCG_TPNOোۅ୊VARCHAR2(50)1062-231-3044োۅ୊LDNM_ADRSޛѤࣗ੤૑(૑ߣ)VARCHAR2(1000)1੹ۄթب ചࣽҵ بҋݶ हৠܻ ࢑ 4-7 ചࣽஶ౟ܻ௿ۣ āઑ਷ডಿ Ҏ೐ഥਗӂ 1ҳઝ[ഥਗߣഐ:J04120415,ഥਗӂݺ:ചࣽஶ౟ܻ௿ۣ,ഥਗݺࢿ:āઑ਷ডಿ]ޛѤࣗ੤૑(૑ߣ)
+NMRD_ADRSޛѤࣗ੤૑(ݺ۽ب)VARCHAR2(1000)1੹ۄթب ചࣽҵ بҋݶ ୌక۽ 1000-151 ചࣽஶ౟ܻ௿ۣ āઑ਷ডಿ Ҏ೐ഥਗӂ 1ҳઝ[ഥਗߣഐ:J04120415,ഥਗӂݺ:ചࣽஶ౟ܻ௿ۣ,ഥਗݺࢿ:āઑ਷ডಿ] (900ஶ౟ܻ௿ۣ)ޛѤࣗ੤૑(۽بݺ)
+ - - 78
+
+[페이지 79]
+Open API ഝਊо੉٘
+ޛѤ੿ࠁCLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(50)12017-11885-003ޛѤҙߣܻഐPRPT_DVSN_NM੤࢑ઙܨVARCHAR2(100)1ӝఋੌ߈੤࢑੤࢑ઙܨDLGT_ORG_NMਤ੐ӝҙVARCHAR2(100)1ࢲҟ઱ࢲޖࣁਤ੐ӝҙCTGR_FULL_NMਊبVARCHAR2(100)1ഥਗӂ / Ҏ೐ഥਗӂਊبBID_MTD_NMੑ଴ߑधVARCHAR2(10)1୭Ҋоߑधੑ଴ߑधTFRT_PLNM_DT୭ୡҕҊੌ੗VARCHAR2(8)020170101୭ୡҕҊੌ੗CPTN_MTD_NM҃੬ߑधVARCHAR2(200)1ੌ߈҃੬҃੬ߑधSCRT_KIND઱धઙܨVARCHAR2(100)0ࠁా઱઱धઙܨSCRT_NMૐӂݺVARCHAR2(500)0 (઱)അ૓ ࢚࠺੢ ୹੗੹ജ઱धૐӂݺQNTY۝ࣻNUMBER(22)01ѐ۝ࣻPCOS૑࠙ਯNUMBER(22)05.1488૑࠙ਯSTK_PER_DNMT_PRC઱׼ঘݶоNUMBER(22)010000઱׼ঘݶоDNMT_TOT_AMTঘݶ୨ঘNUMBER(22)01145760000ঘݶ୨ঘISU_STK_TOT_CNTߊ೯઱ध୨ࣻNUMBER(22)010179400ߊ೯઱ध୨ࣻITM_NMઙݺݾVARCHAR2(500)0೐ۄ੐ѐߊ(઱)ઙݺݾRPSV_NM؀಴੗ݺVARCHAR2(100)0ഘӡز؀಴੗ݺCTNOোۅ୊VARCHAR2(50)002-111-0000োۅ୊ETLS_DT݀ࢸੌ੗VARCHAR2(8)020170203݀ࢸੌ੗CSCT_MONѾ࢑ਘVARCHAR2(2)012Ѿ࢑ਘTPBZসઙVARCHAR2(100)0ӝఋ ࠺઱Ѣਊ Ѥޛ ѤࢸসসઙPRMR_MNFTR_GDS઱ਃઁಿVARCHAR2(2000)0ҟҊস؀ޖ೯઱ਃઁಿ-   -79
+
+[페이지 80]
+Open API ഝਊо੉٘MBS_SCRT_NOഥਗӂߣഐVARCHAR2(2000)0J04120415ഥਗӂߣഐMMB_RGT_NMഥਗӂݺVARCHAR2(200)0ਧܻ൧ܻ౵௼ 1 3 0 8 (ઁੌ੷୷)ഥਗӂݺPOSI_ENV_PSCDਤ஖ࠗ߂ӔഅടVARCHAR2(500)0࢑ࠗ৉૑ೞ࢚بоਤ஖ࠗ߂ӔഅടUTLZ_PSCD੉ਊഅടVARCHAR2(2000)0ҕࢲب݀ҙ ध׼੉ਊഅടETC_DTL_CNTNӝఋࢎ೦VARCHAR2(2000)0ઁಿౠ૚ҳࢿ : ੤ഝਊಿ׼׸੗੹ചߣഐ :  054-779-6711ӝఋࢎ೦DPSL_FINC_COMPݒпӘਲ਼ഥࢎVARCHAR2(500)0ೠചࣚ೧ࠁ೷ ৻ 2ࢎݒпӘਲ਼ഥࢎPOOR_BOND_KINDࠗप଻ӂઙܨVARCHAR2(500)0ࠗप੗࢑ࠗप଻ӂઙܨBOND_AMT଻ӂӘঘNUMBER(22)015343424691଻ӂӘঘHDOR_AST_FIX_DYনب੗࢑ഛ੿ੌदVARCHAR2(14)020171210000000নب੗࢑ഛ੿ੌद
+ҕݒ੿ࠁMIN_BID_PRCੑ଴द੘оNUMBER(22)160000000ੑ଴द੘оPCMT_PYMT_EPDT_CNTN݅ӝੌVARCHAR2(400)130ੌ݅ӝੌBID_PRGN_NFTੑ଴ ഥࣻNUMBER(22)10ੑ଴ ഥࣻDLVR_RSBYبݺ଼੐VARCHAR2(200)0ࣻݒੋبݺ଼੐ICDL_CDTN؀ࠗઑѤVARCHAR2(2000)0୎ࠗ౵ੌଵઑ؀ࠗઑѤSHR_RQR_EPRT_DT࠙ߓਃҳઙӝVARCHAR2(8)020171030࠙ߓਃҳઙӝ࢚ࣁ੿ࠁ ୨ ѤࣻtotalCountEstх੿ಣоࢲ ୨ Ѥࣻ701х੿ಣоࢲ ୨ ѤࣻtotalCountBidҕݒੌ੿ ୨ Ѥࣻ701ҕݒੌ੿ ୨ ѤࣻtotalCountBidHisੑ଴੉۱ ୨ Ѥࣻ701ੑ଴੉۱ ୨ ѤࣻtotalCountStock઱઱੿ࠁ ୨ Ѥࣻ701઱઱੿ࠁ ୨ Ѥࣻ - - 80
+
+[페이지 81]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n) ѤࣻtotalCountCorporߨੋഅട੿ࠁ ୨ Ѥࣻ701ߨੋഅട੿ࠁ ୨ Ѥࣻ
+ - - 81
+
+[페이지 82]
+Open API ഝਊо੉٘˞ਃ୒ / ਽׹ ݫद૑ ৘ઁ(ഥਗӂ ߂ ਬоૐӂ)
+-   -82
+
+[페이지 83]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail?serviceKey=࠺ࢲझః&CLTR_NO=1231164&PBCT_NO=9304065਽׹ ݫद૑
+-   -83
+
+[페이지 84]
+Open API ഝਊо੉٘?<xml version="1.0" encoding="UTF-8"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body>    <item><CLTR_NM>੹ۄթب ചࣽҵ بҋݶ हৠܻ ࢑4-7 ചࣽஶ౟ܻ௿ۣ āઑ਷ডಿ Ҏ೐ഥਗӂ 1ҳઝ[ഥਗߣഐ:J04120415,ഥਗӂݺ:ചࣽஶ౟ܻ௿ۣ,ഥਗݺࢿ:āઑ਷ডಿ]</CLTR_NM><CTGR_TYPE_NM>ӂܻ/ૐӂ</CTGR_TYPE_NM>    <DPSL_MTD_NM>ݒп</DPSL_MTD_NM>    <PBCT_CLTR_STAT_NM>ਬ଴</PBCT_CLTR_STAT_NM><ORG_NM>ೠҴ੗࢑ҙܻҕࢎ/<ORG_NM><RGST_DEPT_NM>ҟ઱੹թ૑৉ࠗࠄ/<RGST_DEPT_NM>    <PSCG_NM>ઑࣁ੿ܻ౱</PSCG_NM><PSCG_TPNO>062-231-3044</PSCG_TPNO><LDNM_ADRS>੹ۄթب ചࣽҵ بҋݶ हৠܻ ࢑ 4-7 ചࣽஶ౟ܻ௿ۣ āઑ਷ডಿ Ҏ೐ഥਗӂ 1ҳઝ[ഥਗߣഐ:J04120415,ഥਗӂݺ:ചࣽஶ౟ܻ௿ۣ,ഥਗݺࢿ:āઑ਷ডಿ]</LDNM_ADRS><NMRD_ADRS>੹ۄթب ചࣽҵ بҋݶ ୌక۽ 1000-151 ചࣽஶ౟ܻ௿ۣ āઑ਷ডಿ Ҏ೐ഥਗӂ 1ҳઝ[ഥਗߣഐ:J04120415,ഥਗӂݺ:ചࣽஶ౟ܻ௿ۣ,ഥਗݺࢿ:āઑ਷ডಿ] (900ஶ౟ܻ௿ۣ/<)NMRD_ADRS><CLTR_MNMT_NO>2017-11885-003</CLTR_MNMT_NO><PRPT_DVSN_NM>঑ܨ੤࢑(஬௏)</PRPT_DVSN_NM><DLGT_ORG_NM>ࢲҟ઱ࢲޖࣁ/<DLGT_ORG_NM><CTGR_FULL_NM>ഥਗӂ / Ҏ೐ഥਗӂ</CTGR_FULL_NM><BID_MTD_NM>୭Ҋоߑध</BID_MTD_NM><TFRT_PLNM_DT>20170929</TFRT_PLNM_DT><CPTN_MTD_NM>ੌ߈҃੬</CPTN_MTD_NM><SCRT_KIND></SCRT_KIND>-   -84
+
+[페이지 85]
+Open API ഝਊо੉٘˝਽׹ ݫद૑ ࣁݺ(ӝ҅ ߂ ੢ࠗ࠺ಿ)
+-   -85
+
+[페이지 86]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑ӝࠄ੿ࠁCLTR_NMޛѤݺVARCHAR2(1000)1ࢿ࢖ ۨ੉੷೐ܽఠ ML-4555N ١ޛѤݺCTGR_TYPE_NMޛѤઙܨVARCHAR2(100)1ޛಿ(ӝ҅)ޛѤઙܨDPSL_MTD_NM୊ߑ࠙धVARCHAR2(100)1ݒп୊ߑ࠙धPBCT_CLTR_STAT_NMޛѤ࢚కVARCHAR2(100)1ੑ଴ળ࠺઺ޛѤ࢚కӝҙ੿ࠁORG_NMੑ଴૘೯ӝҙVARCHAR2(100)1਋੿ࢎস੿ࣃࠁఠੑ଴૘೯ӝҙRGST_DEPT_NMࢲࠗVARCHAR2(100)1਋੿ࢎস੿ࣃࠁఠࢲࠗPSCG_NM׼׸੗VARCHAR2(100)1ഘ൞҃׼׸੗PSCG_TPNOোۅ୊VARCHAR2(50)1061-338-2173োۅ୊LDNM_ADRSޛѤࣗ੤૑(૑ߣ)VARCHAR2(1000)1୽୒թب ই࢑द ߑߓ਻ ҕܻࣻ 8 8 3  āनܻب௏ ই࢑ҕ੢ޛѤࣗ੤૑(૑ߣ)NMRD_ADRSޛѤࣗ੤૑(۽بݺ)VARCHAR2(1000)1୽୒թب ই࢑द ߑߓ਻ ࣽୌೱ۽ 1138, ā ই࢑ҕ੢ (नܻب௏)ޛѤࣗ੤૑(۽بݺ)CLTR_MNMT_NOޛѤҙߣܻഐVARCHAR2(50)12017-1100-040806ޛѤҙߣܻഐPRPT_DVSN_NM੤࢑ઙܨVARCHAR2(100)1ࠛਊಿ੤࢑ઙܨDLGT_ORG_NMਤ੐ӝҙVARCHAR2(100)1ࠗୌࢲޖࣁਤ੐ӝҙCTGR_FULL_NMਊبVARCHAR2(100)1ஹೊఠ/੹ӝ/ాनӝ҅ / ஹೊఠ߂઱߸ӝӝਊبBID_MTD_NMੑ଴ߑधVARCHAR2(100)1ੌ߈҃੬(୭Ҋоߑध) / ୨ঘੑ଴ߑधTFRT_PLNM_DT୭ୡҕҊੌ੗VARCHAR2(8)0e20170102୭ୡҕҊੌ੗
+-   -86
+
+[페이지 87]
+Open API ഝਊо੉٘
+ޛѤ੿ࠁGOODS_NMޛѤࣁ࢚੿ࠁVARCHAR2(4000)0ۨ੉੷೐ܽఠ  ,  *  ղਊোࣻ ҃җ ߂ ֢റച ١ਵ۽ ݒпೞח ޛѤ੐(ತಿ੉۽޲ ா੉࠶ ١ হ਺)* ੹࢑੢࠺੄ ઁઑࢎ۽ ࠗఠ ӝࣿ૑ਗ੉ ࠛоೣޛѤࣁ࢚੿ࠁPOSI_ENV_PSCDਤ஖ࠗ߂ӔഅടVARCHAR2(500)0Ҵղࢶ୒ࢎ 1,2கਤ஖ࠗ߂ӔഅടMANFઁઑݺࢎVARCHAR2(200)0ࢿ࢖ઁઑݺࢎMDLݺ؛ݽVARCHAR2(500)0ML-4555N ١ݺ؛ݽNRGTઁઑب֙VARCHAR2(4)02010ઁઑب֙STNDӏѺVARCHAR2(500)0హӏѺPSNS_SIZE௼ӝVARCHAR2(200)048(о۽*)60(ࣁ۽*)63(֫੉))௼ӝPRDN_PLC_CTFR࢑ࢤਗ࢑૑VARCHAR2(50)0KR࢑ࢤਗ࢑૑USE_TERMࢎਊӝрNUMBER(22)08ࢎਊӝрWGHT_QNTYо઺۝VARCHAR2(100)017о઺۝QNTY۝ࣻNUMBER(22)01,692؀۝ࣻCSTD_PLCࠁҙ੢ࣗVARCHAR2(500)0୽թ ই࢑द ߑߓ਻ ࣽୌೱ۽ 1 1 3 8  (઱)नܻب௏ ই࢑ҕ੢ࠁҙ੢ࣗETC_DTL_CNTNӝఋࣁ࢚ղਊVARCHAR2(2000)0* ղਊোࣻ ҃җ ߂ ֢റച ١ਵ۽ ݒпೞח ޛѤ੐(ತಿ੉۽޲ ா੉࠶ ١ হ਺)* ੹࢑੢࠺੄ ઁઑࢎ۽ ࠗఠ ӝࣿ૑ਗ੉ ࠛоೣӝఋࣁ࢚ղਊ
+ҕݒ੿ࠁMIN_BID_PRCੑ଴द੘оNUMBER(22)1 940080ੑ଴द੘оPCMT_PYMT_EPDT_CNTN݅ӝੌVARCHAR2(400)1҅ডੌ݅ӝੌBID_PRGN_NFTੑ଴ ഥࣻNUMBER(22)10ੑ଴ ഥࣻDLVR_RSBYبݺ଼੐VARCHAR2(200)0ࣻݒ੗بݺ଼੐ICDL_CDTN؀ࠗઑѤVARCHAR2(2000)0ٚݽ ઁ࠺߈ਊ ࣻݒ੗ ׸ࠗ੐؀ࠗઑѤ-   -87
+
+[페이지 88]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)SHR_RQR_EPRT_DT࠙ߓਃҳઙӝVARCHAR2(8)0e20160907࠙ߓਃҳઙӝ࢚ࣁ੿ࠁ ୨ ѤࣻtotalCountEstх੿ಣоࢲ ୨ Ѥࣻ701х੿ಣоࢲ ୨ ѤࣻtotalCountRental੐؀ର੿ࠁ ୨ Ѥࣻ701੐؀ର੿ࠁ ୨ ѤࣻtotalCountRegiӂܻઙܨ੿ࠁ ୨ Ѥࣻ701ӂܻઙܨ੿ࠁ ୨ ѤࣻtotalCountBidҕݒੌ੿ ୨ Ѥࣻ701ҕݒੌ੿ ୨ ѤࣻtotalCountBidHisੑ଴੉۱ ୨ Ѥࣻ701ੑ଴੉۱ ୨ Ѥࣻ
+ - - 88
+
+[페이지 89]
+Open API ഝਊо੉٘˞ਃ୒ / ਽׹ ݫद૑ ৘ઁ(ӝ҅ ߂ ੢ࠗ࠺ಿ)
+-   -89
+
+[페이지 90]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrBasicInfoDetail?serviceKey=࠺ࢲझః&CLTR_NO=1242468&PBCT_NO=9319673਽׹ ݫद૑
+-   -90
+
+[페이지 91]
+Open API ഝਊо੉٘ ?<xml version="1.0" encoding="UTF-8"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body>    <item><CLTR_NM>ࢿ࢖ ۨ੉੷೐ܽఠ ML-4555N ١/<CLTR_NM><CTGR_TYPE_NM>ޛಿ(ӝ҅)</CTGR_TYPE_NM>    <DPSL_MTD_NM>ݒп</DPSL_MTD_NM>    <PBCT_CLTR_STAT_NM>ੋఠ֔ੑ଴૓೯઺</PBCT_CLTR_STAT_NM><ORG_NM>਋੿ࢎস੿ࣃࠁఠ</ORG_NM><RGST_DEPT_NM>਋੿ࢎস੿ࣃࠁఠ</RGST_DEPT_NM>    <PSCG_NM>ഘ൞҃</PSCG_NM><PSCG_TPNO>061-338-2173</PSCG_TPNO><LDNM_ADRS>୽୒թب ই࢑द ߑߓ਻ ҕܻࣻ 8 8 3  āनܻب௏ ই࢑ҕ੢</LDNM_ADRS><NMRD_ADRS>୽୒թب ই࢑द ߑߓ਻ ࣽୌೱ۽ 1 1 3 8 ,  ā ই࢑ҕ੢ (नܻب௏)</NMRD_ADRS><CLTR_MNMT_NO>2017-1100-040806</CLTR_MNMT_NO><PRPT_DVSN_NM>ࠛਊಿ</PRPT_DVSN_NM><DLGT_ORG_NM></DLGT_ORG_NM><CTGR_FULL_NM>ஹೊఠ/੹ӝ/ాनӝ҅ / ஹೊఠ߂઱߸ӝӝ</CTGR_FULL_NM><BID_MTD_NM>ੌ߈҃੬(୭Ҋоߑध) / ୨ঘ</BID_MTD_NM><TFRT_PLNM_DT></TFRT_PLNM_DT><GOODS_NM>ۨ੉੷೐ܽఠ  , * ղਊোࣻ ҃җ ߂ ֢റച ١ਵ۽ ݒпೞח ޛѤ੐(ತಿ੉۽޲ ா੉࠶ ١ হ਺)* ੹࢑੢࠺੄ ઁઑ۽ࢎ ࠗఠ ӝࣿ૑ਗ੉ ࠛоೣ</GOODS_NM>-   -91
+
+[페이지 92]
+Open API ഝਊо੉٘9)ా೤ਊޛ߹بѤ х੿ಣоࢲ੿ࠁ ࣁ࢚ઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ9ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤ਊޛ߹بѤ х੿ಣоࢲ੿ࠁ ࣁ࢚ઑഥࣁ࢚ӝמ ݺࢸޛѤߣഐ, ҕߣݒഐܳ ੉ਊ೧ х੿о, х੿ಣоੌ੗, х੿ಣоস୓ ۾ݾਸ ઑഥೞח ా೤ਊޛ߹بѤ х੿ಣоࢲ੿ࠁ ࣁ࢚ઑഥ ӝמCall Back URL/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrEstimationInfoDetail୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐCLTR_NOޛѤߣഐNUMBER(22)11239199ޛѤߣഐPBCT_NOҕߣݒഐNUMBER(22)19317012ҕߣݒഐ
+-   -92
+
+[페이지 93]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2010ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ7015ઑഥؘ੉ఠ੄ ୨Ѥࣻх੿੿ࠁAPSL_ASES_AMTх੿оNUMBER(22)017800000х੿оAPSL_ASES_DTх੿ಣоੌ੗VARCHAR2(8)020171024YYYYMMDDAPSL_ASES_ORG_NMх੿ಣоস୓VARCHAR2(400)0ޖ઱Ҵਬܿҙܻࣗх੿ಣоস୓
+-   -93
+
+[페이지 94]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+10)ా೤ਊޛ߹بѤ ੐؀ର੿ࠁ ࣁ࢚ઑഥ ࣁ࢚ӝמ ࣁݺREST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrEstimationInfoDetail?serviceKey=࠺ࢲझః&CLTR_NO=1239199&PBCT_NO=9317012&numOfRows=1&pageNo=1਽׹ ݫद૑<?xml version="1.0" encoding="UTF-8"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body>   <items><estimationInfo><RNUM>1</RNUM><APSL_ASES_AMT>17800000</APSL_ASES_AMT>    <APSL_ASES_DT>20171024</APSL_ASES_DT><APSL_ASES_ORG_NM>ޖ઱Ҵਬܿҙܻࣗ/<APSL_ASES_ORG_NM></estimationInfo></items><pageNo>1</pageNo><totalCount>1</totalCount><numOfRows>10</numOfRows></body></response>
+-   -94
+
+[페이지 95]
+Open API ഝਊо੉٘
+˝ਃ୒ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ10ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤ਊޛ߹بѤ ੐؀ର੿ࠁ ࣁ࢚ઑഥࣁ࢚ӝמ ݺࢸޛѤߣഐ, ҕߣݒഐܳ ੉ਊ೧ ੐؀ରղਊ, ੉ܴ ,ࠁૐӘ, ର੐(ਘࣁ ,)ജࠁ࢑ૐӘ, ഛ੿(ࢸ੿)ੌ, ੹ੑੌ ۾ݾਸ ઑഥೞח ా೤ਊޛ߹بѤ ੐؀ର੿ࠁ ࣁ࢚ઑഥ ӝמCall Back URL/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrRentalInfoDetail୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐCLTR_NOޛѤߣഐNUMBER(22)11239199ޛѤߣഐPBCT_NOҕߣݒഐNUMBER(22)19317012ҕߣݒഐ
+-   -95
+
+[페이지 96]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2010ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨ Ѥࣻ7015ઑഥؘ੉ఠ੄ ୨ Ѥࣻ੐؀ର ੿ࠁIRST_DVSN_NM੐؀ରղਊVARCHAR2(100)0੐ରੋ*ઑࣁ੿ܻ ࢚؀ী݅ ੿ࠁઁҕ*ܻझ౟(nѐ)IRST_IRPS_NM੉ܴVARCHAR2(200)0੐ରੋTDPS_AMTࠁૐӘNUMBER(22)050000000MTHR_AMTର੐(ਘࣁ)NUMBER(22)0400000CONV_GRT_MONYജࠁ࢑ૐӘNUMBER(22)0160000000FIX_DTഛ੿(ࢸ੿)ੌVARCHAR2(8)020170202MVN_DT੹ੑੌVARCHAR2(8)020100405
+-   -96
+
+[페이지 97]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -97
+
+[페이지 98]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrRentalInfoDetail?serviceKey=࠺ࢲझః&CLTR_NO=1239199&PBCT_NO=9317012&numOfRows=1&pageNo=1਽׹ ݫद૑<?xml version="1.0" encoding="UTF-8"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body>   <items><rentalInfo><RNUM>1</RNUM><IRST_DVSN_NM>੐ରੋ</IRST_DVSN_NM><IRST_IRPS_NM>੐ରੋ</IRST_IRPS_NM><TDPS_AMT></TDPS_AMT><MTHR_AMT></MTHR_AMT><CONV_GRT_MONY></CONV_GRT_MONY><FIX_DT></FIX_DT><MVN_DT></MVN_DT></rentalInfo></items><pageNo>1</pageNo><totalCount>1</totalCount><numOfRows>10</numOfRows></body></response>-   -98
+
+[페이지 99]
+Open API ഝਊо੉٘11)ా೤ਊޛ߹بѤ ӂܻઙܨ੿ࠁ ࣁ࢚ઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ11ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤ਊޛ߹بѤ ӂܻઙܨ੿ࠁ ࣁ࢚ઑഥࣁ࢚ӝמ ݺࢸޛѤߣഐ, ҕߣݒഐܳ ੉ਊ೧ ӂܻઙܨ ,ӂܻ੗ݺ ,١ӝੌ, ࢸ੿ঘ(ਗ) ۾ݾਸ ઑഥೞח ా೤ਊޛ߹بѤ ӂܻઙܨ੿ࠁ ࣁ࢚ઑഥ ӝמCall Back URL/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrRegisteredInfoDetail୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐCLTR_NOޛѤߣഐNUMBER(22)11235331ޛѤߣഐPBCT_NOҕߣݒഐNUMBER(22)19318910ҕߣݒഐ
+-   -99
+
+[페이지 100]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2010ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ7015ઑഥؘ੉ఠ੄ ୨Ѥࣻ١ӝ੿ࠁIRST_DVSN_NMӂܻઙܨVARCHAR2(100)0Ӕ੷׼ӂ*ઑࣁ੿ܻ ࢚؀ী݅ ੿ࠁઁҕ*ܻझ౟(nѐ)IRST_IRPS_NMӂܻ੗ݺVARCHAR2(200)0Ҋ੤അ(Ӕ੷׼ӂ੗)RGST_DT١ӝੌVARCHAR2(8)020121010STUP_AMTࢸ੿ঘ(ਗ)NUMBER(22)0150000000
+-   -100
+
+[페이지 101]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -101
+
+[페이지 102]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrRegisteredInfoDetail?serviceKey=࠺ࢲझః&CLTR_NO=1235331&PBCT_NO=9318910&numOfRows=1&pageNo=1਽׹ ݫद૑
+-   -102
+
+[페이지 103]
+Open API ഝਊо੉٘?<xml version="1.0" encoding="UTF-8"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body>   <items><registered><RNUM>1</RNUM><IRST_DVSN_NM>Ӕ੷׼ӂ</IRST_DVSN_NM><IRST_IRPS_NM>Ҋ੤അ(Ӕ੷׼ӂ੗)</IRST_IRPS_NM><RGST_DT>20121010</RGST_DT><STUP_AMT>150000000</STUP_AMT></registered><registered><RNUM>2</RNUM><IRST_DVSN_NM>Ӕ੷׼ӂ</IRST_DVSN_NM><IRST_IRPS_NM>޷߸৔(Ӕ੷׼ӂ੗)</IRST_IRPS_NM><RGST_DT>20121010</RGST_DT><STUP_AMT>110000000</STUP_AMT></registered><registered><RNUM>3</RNUM><IRST_DVSN_NM>Ӕ੷׼ӂ</IRST_DVSN_NM><IRST_IRPS_NM>޷߸৔(Ӕ੷׼ӂ੗)</IRST_IRPS_NM>-   -103
+
+[페이지 104]
+Open API ഝਊо੉٘12)ా೤ਊޛ߹بѤ ҕݒੌ੿ ࣁ࢚ઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ12ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤ਊޛ߹بѤ ҕݒੌ੿ ࣁ࢚ઑഥࣁ࢚ӝמ ݺࢸޛѤߣഐ, ҕߣݒഐܳ ੉ਊ೧ ੑ଴ߣഐ, ഥର, ରࣻ ,ੑ଴ҳݺ࠙ ,؀Әժࠗ ,ժࠗӝೠ, ੑ଴द੘ੌद, ੑ଴݃хੌद, ѐ଴ੌद, ѐ଴੢ࣗ ,ݒпѾ੿ੌद, ୭੷ੑ଴о ۾ݾਸ ઑഥೞח ా೤ਊޛ߹بѤ ҕݒੌ੿ ࣁ࢚ઑഥ ӝמCall Back URL/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrBidDateInfoDetail୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐCLTR_NOޛѤߣഐNUMBER(22)11235331ޛѤߣഐPBCT_NOҕߣݒഐNUMBER(22)19318910ҕߣݒഐ
+-   -104
+
+[페이지 105]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2010ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ7015ઑഥؘ੉ఠ੄ ୨Ѥࣻ
+ੑ଴੿ࠁBID_MNMT_NOੑ଴ߣഐVARCHAR2(50)1024
+*ܻझ౟(nѐ)PBCT_SEQഥରVARCHAR2(3)1042PBCT_DGRରࣻVARCHAR2(5)1001BID_DVSN_NMੑ଴ҳݺ࠙VARCHAR2(100)1ੋఠ֔PCMT_PYMT_MTD_CNTN؀ӘժࠗVARCHAR2(400)1ੌदࠛPCMT_PYMT_EPDT_CNTNժࠗӝೠVARCHAR2(400)130ੌPBCT_BEGN_DTMੑ଴द੘ੌदVARCHAR2(14)120171023100000PBCT_CLS_DTMੑ଴݃хੌदVARCHAR2(14)120171025170000PBCT_EXCT_DTMѐ଴ੌदVARCHAR2(14)120171026110000OPBD_PLC_CNTNѐ଴੢ࣗVARCHAR2(14)1੹੗੗࢑୊࠙दझమDPSL_DCSN_DTMݒпѾ੿ੌदVARCHAR2(14)120171010110000MIN_BID_PRC୭੷ੑ଴оVARCHAR2(24)119,956,000
+-   -105
+
+[페이지 106]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -106
+
+[페이지 107]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrBidDateInfoDetail?serviceKey=࠺ࢲझః&CLTR_NO=1226758&PBCT_NO=9301922&numOfRows=1&pageNo=1਽׹ ݫद૑
+-   -107
+
+[페이지 108]
+Open API ഝਊо੉٘?<xml version="1.0" encoding="UTF-8"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body>   <items><bidInfo>    <RNUM>1</RNUM>    <BID_MNMT_NO>024</BID_MNMT_NO><PBCT_SEQ>042</PBCT_SEQ><PBCT_DGR>001</PBCT_DGR><BID_DVSN_NM>ੋఠ֔/<BID_DVSN_NM><PCMT_PYMT_MTD_CNTN>ੌदࠛ/<PCMT_PYMT_MTD_CNTN><PCMT_PYMT_EPDT_CNTN>30ੌ</PCMT_PYMT_EPDT_CNTN><PBCT_BEGN_DTM>20171023100000</PBCT_BEGN_DTM><PBCT_CLS_DTM>20171025170000</PBCT_CLS_DTM><PBCT_EXCT_DTM>20171026110000</PBCT_EXCT_DTM><OPBD_PLC_CNTN>੹੗੗࢑୊࠙दझమ(www.onbid.co.kr)</OPBD_PLC_CNTN><DPSL_DCSN_DTM>20171030100000</DPSL_DCSN_DTM><MIN_BID_PRC>24,945,000</MIN_BID_PRC></bidInfo><bidInfo>    <RNUM>2</RNUM>    <BID_MNMT_NO>024</BID_MNMT_NO><PBCT_SEQ>043</PBCT_SEQ><PBCT_DGR>001</PBCT_DGR>-   -108
+
+[페이지 109]
+Open API ഝਊо੉٘13)ా೤ਊޛ߹بѤ ੑ଴੉۱ ࣁ࢚ઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ13ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤ਊޛ߹بѤ ੑ଴੉۱ ࣁ࢚ઑഥࣁ࢚ӝמ ݺࢸޛѤߣഐ, ҕߣݒഐܳ ੉ਊ೧ ഥର, ରࣻ ,ੑ଴ߣഐ, ୊ߑ࠙ध, ѐ଴ੌद, ୭੷ੑ଴о, ੑ଴Ѿҗ ۾ݾਸ ઑഥೞח ా೤ਊޛ߹بѤ ੑ଴੉۱ ࣁ࢚ઑഥ ӝמCall Back URL/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrBidHistoryInfoDetail୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐCLTR_NOޛѤߣഐNUMBER(22)11226758ޛѤߣഐPBCT_NOҕߣݒഐNUMBER(22)19301922ҕߣݒഐ
+-   -109
+
+[페이지 110]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2010ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ7015ઑഥؘ੉ఠ੄ ୨Ѥࣻੑ଴੉۱੿ࠁPBCT_SEQഥରVARCHAR2(3)1045*ܻझ౟(nѐ)PBCT_DGRରࣻVARCHAR2(5)1001BID_MNMT_NOੑ଴ߣഐVARCHAR2(50)1024DPSL_MTD_NM୊ߑ࠙धVARCHAR2(100)1ݒпPBCT_EXCT_DTMѐ଴ੌदVARCHAR2(14)120171116110000MIN_BID_PRC୭੷ੑ଴оNUMBER(22)117,462,000PBCT_STAT_NMੑ଴ѾҗVARCHAR2(100)1ਬ଴
+-   -110
+
+[페이지 111]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -111
+
+[페이지 112]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrBidHistoryInfoDetail?serviceKey=࠺ࢲझః&CLTR_NO=1226758&PBCT_NO=9301922&numOfRows=1&pageNo=1਽׹ ݫद૑
+-   -112
+
+[페이지 113]
+Open API ഝਊо੉٘?<xml version="1.0" encoding="UTF-8"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body>   <items><bidHistoryInfo>    <RNUM>1</RNUM><PBCT_SEQ>045</PBCT_SEQ><PBCT_DGR>001</PBCT_DGR><BID_MNMT_NO>024</BID_MNMT_NO><DPSL_MTD_NM>ݒп</DPSL_MTD_NM><PBCT_EXCT_DTM>20171116110000</PBCT_EXCT_DTM><MIN_BID_PRC>17,462,000</MIN_BID_PRC><PBCT_STAT_NM>ਬ଴</PBCT_STAT_NM></bidHistoryInfo><bidHistoryInfo>    <RNUM>2</RNUM><PBCT_SEQ>044</PBCT_SEQ><PBCT_DGR>001</PBCT_DGR><BID_MNMT_NO>024</BID_MNMT_NO><DPSL_MTD_NM>ݒп</DPSL_MTD_NM><PBCT_EXCT_DTM>20171109110000</PBCT_EXCT_DTM><MIN_BID_PRC>19,956,000</MIN_BID_PRC><PBCT_STAT_NM>ਬ଴</PBCT_STAT_NM></bidHistoryInfo><bidHistoryInfo>-   -113
+
+[페이지 114]
+Open API ഝਊо੉٘14)ా೤ਊޛ߹بѤ ઱઱੿ࠁ ࣁ࢚ઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ14ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤ਊޛ߹بѤ ઱઱੿ࠁ ࣁ࢚ઑഥࣁ࢚ӝמ ݺࢸޛѤߣഐ, ҕߣݒഐܳ ੉ਊ೧ द௫झߣഐ, ઱઱ݺ ,ࠁਬ઱धࣻ ,૑࠙ਯ ۾ݾਸ ઑഥೞח ా೤ਊޛ߹بѤ ઱઱੿ࠁ ࣁ࢚ઑഥ ӝמCall Back URL/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrStockholderInfoDetail୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐCLTR_NOޛѤߣഐNUMBER(22)11176660ޛѤߣഐPBCT_NOҕߣݒഐNUMBER(22)19272855ҕߣݒഐ
+-   -114
+
+[페이지 115]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2010ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ7015ઑഥؘ੉ఠ੄ ୨Ѥࣻ઱ਃ઱઱അടSCRT_STHL_NOद௫झߣഐNUMBER(22)097075*ܻझ౟(nѐ)STHL_NM઱઱ݺVARCHAR2(200)0ӣӡਔPOSN_STK_CNTࠁਬ઱धࣻNUMBER(22)0166687PCOS૑࠙ਯNUMBER(22)066.4092
+-   -115
+
+[페이지 116]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -116
+
+[페이지 117]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrStockholderInfoDetail?serviceKey=࠺ࢲझః&CLTR_NO=1176660&PBCT_NO=9272855&numOfRows=1&pageNo=1਽׹ ݫद૑
+-   -117
+
+[페이지 118]
+Open API ഝਊо੉٘?<xml version="1.0" encoding="UTF-8"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body>   <items><stockholderInfo><RNUM>1</RNUM>    <SCRT_STHL_NO>97075</SCRT_STHL_NO><STHL_NM>ӣӡਔ</STHL_NM><POSN_STK_CNT>166687</POSN_STK_CNT><PCOS>66.4092</PCOS></stockholderInfo><stockholderInfo><RNUM>2</RNUM>    <SCRT_STHL_NO>97076</SCRT_STHL_NO><STHL_NM>Ҵ(ӝദ੤੿ࠗ/<)STHL_NM><POSN_STK_CNT>23700</POSN_STK_CNT><PCOS>9.4422</PCOS></stockholderInfo><stockholderInfo><RNUM>3</RNUM>    <SCRT_STHL_NO>97077</SCRT_STHL_NO><STHL_NM>੉૓ࢼ/<STHL_NM><POSN_STK_CNT>20613</POSN_STK_CNT><PCOS>8.2124</PCOS></stockholderInfo>-   -118
+
+[페이지 119]
+Open API ഝਊо੉٘15)ా೤ਊޛ߹بѤ ߨੋഅട੿ࠁ ࣁ࢚ઑഥ ࣁ࢚ӝמ ࣁݺ
+˝ਃ୒ ݫद૑ ࣁݺ
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)࢚ࣁӝמ ੿ࠁࣁ࢚ӝמ ߣഐ15ࣁ࢚ӝמ ਬഋઑഥ(۾ݾ)ࣁ࢚ӝݺמ(Ҵޙ)ా೤ਊޛ߹بѤ ߨੋഅട੿ࠁ ࣁ࢚ઑഥࣁ࢚ӝמ ݺࢸޛѤߣഐ, ҕߣݒഐܳ ੉ਊ೧ ੤ب֙ޖ ,׼ઝ੗࢑ ,੤Ҋ੗࢑ ,ై੗੗࢑ ,ਬഋ੗࢑ ,ޖഋ੗࢑ ,੉ো੗࢑ ,ਬࠗز଻, Ҋ੿ࠗ଻, ੗ࠄӘ, ੗ࠄ੔ৈӘ, ੉੊੔ৈӘ, ੗ࠄઑ੿, ݒ୹ঘ, ݒ୹ਗо, ୨ݒ୹ঘ, ౸࠺ݒ৬ҙ࠺ܻ ,৔স੉੊, ৔স৻੉੊, ৔স৻࠺ਊ, ࢚҃੉੊, ౠ߹੉੊, ౠࣚ߹प, ߨੋࣁରх੹ࣚࣽ੊, ߨੋࣁ ,׼ӝࣽ੉੊, ઱ࣽ׼੉੊, ܫ׼ߓ ,׼ߓӘ, ݒ୹ঘࣽ੉੊ਯ, ୨੗ࠄ৔স੉੊ਯ, ੗ӝ੗ࣽࠄ੉੊ਯ, ୨੗ࣽࠄ੉੊ਯ, ݒ୹ঘૐоਯ, ࣽ੉੊ૐоਯ, ਬ࠺زਯ, ࠗ଻࠺ਯ, ୨੗࢑ഥ੹ਯ, ӝఋನҚࣚ੊־҅ঘ ۾ݾਸ ઑഥೞח ా೤ਊޛ߹بѤ ߨੋഅട੿ࠁ ࣁ࢚ઑഥ ӝמCall Back URL/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrCorporatebodyInfoDetail୭؀ ݫद૑ ࢎ੉ૉ[6000 bytes]ಣӐ ਽׹ दр[600 ms]ୡ׼ ୭؀ ౟ے੥࣌[40 tps]೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾserviceKeyੋૐః1001ੋૐః ( U R L - Encode)ҕҕؘ੉ఠನణীࢲ ߊә߉਷ ੋૐఃnumOfRowsಕ੉૑׼ ؘ੉ఠ ѐࣻ2110ಕ੉૑׼ ؘ੉ఠ ѐࣻpageNoಕ੉૑ ߣഐ511ಕ੉૑ ߣഐCLTR_NOޛѤߣഐNUMBER(22)11176660ޛѤߣഐPBCT_NOҕߣݒഐNUMBER(22)19272855ҕߣݒഐ
+-   -119
+
+[페이지 120]
+Open API ഝਊо੉٘˞਽׹ ݫद૑ ࣁݺ
+ - - 120
+
+[페이지 121]
+Open API ഝਊо੉٘೦ݺݾ(৔ޙ)೦ݺݾ(Ҵޙ)೦ݾ௼ӝ೦ݾҳ࠙ࢠ೒ؘ੉ఠ೦ݺࢸݾresultCodeѾҗ௏٘4100Ѿҗ௏٘resultMsgѾҗݫद૑501NORMAL  SERVICE.Ѿҗݫद૑numOfRowsೠ ಕ੉૑ Ѿҗ ࣻ2010ೠ ಕ੉૑ Ѿҗ ࣻpageNoಕ੉૑ ߣഐ501ಕ੉૑ ߣഐTotalCount୨Ѥࣻ7015ઑഥؘ੉ఠ੄ ୨ѤࣻFNCL_YR੤ب֙ޖVARCHAR2(4)02011CRCT_AST_AMT׼ઝ੗࢑NUMBER(22)016545503848IVTR_AST_AMT੤Ҋ੗࢑NUMBER(22)030223275350IVSM_AST_AMTై੗੗࢑NUMBER(22)011245576795TYPE_AST_AMTਬഋ੗࢑NUMBER(22)02093619982ITGB_AST_AMTޖഋ੗࢑NUMBER(22)01676051763DFD_AST_AMT੉ো੗࢑NUMBER(22)05450566608LQDY_LBT_AMTਬࠗز଻NUMBER(22)037824454534FIXD_LBT_AMTҊ੿ࠗ଻NUMBER(22)016106662884CPTL_AMT੗ࠄӘNUMBER(22)03800000000CPTL_SPLS_AMT੗ࠄ੔ৈӘNUMBER(22)0983646015GAIN_SPLS_AMT੉੊੔ৈӘNUMBER(22)014125243149CPTL_AJST_AMT੗ࠄઑ੿NUMBER(22)00SALS_AMTݒ୹ঘNUMBER(22)045734334254SALS_COST_AMTݒ୹ਗоNUMBER(22)027015289431-   -121
+
+[페이지 122]
+Open API ഝਊо੉٘
+ߨੋ੿ࠁTOT_SALS_AMT୨ݒ୹ঘNUMBER(22)011814060346
+*ܻझ౟(nѐ)SALE_AMT_MNMT_AMT౸࠺ݒ৬ҙ࠺ܻNUMBER(22)05850482373BIZ_GAIN_AMT৔স੉੊NUMBER(22)05886911284NOPT_GAIN_AMT৔স৻੉੊NUMBER(22)02104356719NOPT_EPNS_AMT৔স৻࠺ਊNUMBER(22)06626772540RGLR_GAIN_AMT࢚҃੉੊NUMBER(22)00SPCL_GAIN_AMTౠ߹੉੊NUMBER(22)00SPCL_LOS_AMTౠࣚ߹पNUMBER(22)00CPRX_DCTN_BEF_NET_LSNG_AMTߨੋࣁରх੹ࣚࣽ੊NUMBER(22)0-3286256649CPRX_AMTߨੋࣁNUMBER(22)0-800446288TSTR_NPRF_AMT׼ӝࣽ੉੊NUMBER(22)0-3286256649PRSH_NPRF_AMT઱ࣽ׼੉੊NUMBER(22)00DVRTܫ׼ߓNUMBER(22)00DVNS׼ߓӘNUMBER(22)00SALS_AMT_NPRF_RTݒ୹ঘࣽ੉੊ਯNUMBER(22)018.61TOT_CPTL_BIZ_GAIN_RT୨੗ࠄ৔স੉੊ਯNUMBER(22)04.12SELF_CPTL_NPRF_RT੗ӝ੗ࣽࠄ੉੊ਯNUMBER(22)018.67TOT_CPTL_NPRF_RT୨੗ࣽࠄ੉੊ਯNUMBER(22)01.12SALS_AMT_INCRTݒ୹ঘૐоਯNUMBER(22)024.94NPRF_INCRTࣽ੉੊ૐоਯNUMBER(22)0253.19LQDY_RTਬ࠺زਯNUMBER(22)0524.91-   -122
+
+[페이지 123]
+Open API ഝਊо੉٘
+※ ೦ݾҳ࠙ : ೙ࣻ(1), ২࣌(0), 1Ѥ ੉࢚ ࣻࠂѤ(1..n), 0Ѥ חژ ࣻࠂѤ(0..n)LBT_RTࠗ଻࠺ਯNUMBER(22)0135.88TOT_AST_ROTN_RT୨੗࢑ഥ੹ਯNUMBER(22)01.27ETC_ICLS_LSNG_CMLT_AMTӝఋನҚࣚ੊־҅ঘNUMBER(22)00
+-   -123
+
+[페이지 124]
+Open API ഝਊо੉٘˟ਃ୒ / ਽׹ ݫद૑ ৘ઁ
+-   -124
+
+[페이지 125]
+Open API ഝਊо੉٘REST(URI)http://openapi.onbid.co.kr/openapi/services/ThingInfoInquireSvc/getUnifyUsageCltrCorporatebodyInfoDetail?serviceKey=࠺ࢲझః&CLTR_NO=1176660&PBCT_NO=9272855&numOfRows=1&pageNo=1਽׹ ݫद૑
+-   -125
+
+[페이지 126]
+Open API ഝਊо੉٘?<xml version="1.0" encoding="UTF-8"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body>   <items><corporatebodyInfo><RNUM>1</RNUM> <FNCL_YR>2013</FNCL_YR><CRCT_AST_AMT>17178271748</CRCT_AST_AMT> <IVTR_AST_AMT>783442712</IVTR_AST_AMT> <IVSM_AST_AMT>2765560000</IVSM_AST_AMT> <TYPE_AST_AMT>1376891464</TYPE_AST_AMT> <ITGB_AST_AMT>0</ITGB_AST_AMT> <DFD_AST_AMT>3732285600</DFD_AST_AMT> <LQDY_LBT_AMT>4593806668</LQDY_LBT_AMT> <FIXD_LBT_AMT>3860000000</FIXD_LBT_AMT> <CPTL_AMT>10040000000</CPTL_AMT> <CPTL_SPLS_AMT>0</CPTL_SPLS_AMT> <GAIN_SPLS_AMT>7096386856</GAIN_SPLS_AMT> <CPTL_AJST_AMT>0</CPTL_AJST_AMT> <SALS_AMT>26440027720</SALS_AMT> <SALS_COST_AMT>21243778716</SALS_COST_AMT> <TOT_SALS_AMT>5196249004</TOT_SALS_AMT> <SALE_AMT_MNMT_AMT>4287470516</SALE_AMT_MNMT_AMT> <BIZ_GAIN_AMT>908778488</BIZ_GAIN_AMT>-   -126
+
+[페이지 127]
+Open API ഝਊо੉٘׮.Open API ী۞ ௏٘ ੿ܻী۞௏٘ীࣁݫ۞૑ݺࢸ0NORMAL_CODE੿࢚1APPLICATION_ERRORয೒ܻா੉࣌ ী۞2DB_ERRORؘ੉ఠ߬੉झ ী۞3NODATA_ERRORؘ੉ఠহ਺ ী۞4HTTP_ERRORHTTP ী۞5SERVICETIMEOUT_ERROR࠺ࢲझ োѾपಁ ী۞10INVALID_REQUEST_PARAMETER_ERRORੜػޅ ਃ୒ ౵ݫۄఠ ী۞11NO_MANDATORY_REQUEST_PARAMETERS_ERROR೙ࣻਃ୒ ౵ݫۄఠо হ਺12NO_OPENAPI_SERVICE_ERROR೧׼ য়೑API࠺ࢲझо হѢա ತӝؽ20SERVICE_ACCESS_DENIED_ERROR࠺ࢲझ ੽ӔѢࠗ21TEMPORARILY_DISABLE_THE_SERVICEKEY_ERRORੌद੸ਵ۽ ࢎਊೡ ࣻ হח ࠺ࢲझ ః22LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR࠺ࢲझ ਃ୒ઁೠപࣻ ୡҗী۞30SERVICE_KEY_IS_NOT_REGISTERED_ERRORغ۾١૑ ঋ਷ ࠺ࢲझః31DEADLINE_HAS_EXPIRED_ERRORӝೠػܐ݅ ࠺ࢲझః32UNREGISTERED_IP_ERRORغ۾١૑ ঋ਷ IP33UNSIGNED_CALL_ERRORغݺࢲ૑ ঋ਷ ഐ୹99UNKNOWN_ERRORӝఋী۞
+ - - 127
