@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "kamco": {
+      "command": "docker",
+      "args": [
+        "compose",
+        "run",
+        "--rm",
+        "mcp-server"
+      ],
+      "env": {
+        "MONGO_URI": "mongodb://admin:password@mongodb:27017",
+        "QDRANT_HOST": "qdrant",
+        "QDRANT_PORT": "6333",
+        "QDRANT_COLLECTION": "kamco",
+        "EMBED_MODEL": "qwen2.5:latest",
+        "LLM_MODEL": "qwen2.5:latest"
+      }
+    }
+  }
+}

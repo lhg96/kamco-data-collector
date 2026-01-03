@@ -10,43 +10,58 @@
 
 An integrated solution for collecting, normalizing, and analyzing KAMCO (Korea Asset Management Corporation) public auction data using RAG (Retrieval-Augmented Generation).
 
-## 📸 Screenshots
+##  Screenshots
 
 ### Dashboard
 ![Dashboard](screenshots/dashboard.png)
+*Main dashboard showing data statistics and quick actions*
 
 ### Data Collection Interface
 ![Data Collection](screenshots/dataCollect.png)
+*KAMCO API data collection interface with real-time progress*
 
 ### Data List View
 ![Data List](screenshots/dataList.png)
+*Browse and search collected auction data*
 
 ### Detailed View
 ![Details](screenshots/details.png)
+*Detailed property information with all auction details*
+
+### AI Chatbot Interface
+![KAMCO AI Bot](screenshots/kamcoAIBot.png)
+*RAG-based AI chatbot for intelligent property search and Q&A*
 
 ## ✨ Features
 
 - 🔍 Automated data collection from KAMCO OpenAPI
 - 📊 Data normalization and structuring
-- 🤖 RAG-based vector search with local LLM
+- 🤖 **RAG-based AI Chatbot** with intelligent search and Q&A
+- 🔄 Hybrid search: Vector (Qdrant) + Keyword (MongoDB) fallback
 - 🌐 FastAPI RESTful endpoints
 - 💾 MongoDB + Qdrant vector database
-- 🧠 Ollama local LLM integration
-- 🖥️ Web-based management interface
+- 🧠 Ollama local LLM integration (deepseek-r1, nomic-embed-text)
+- 🖥️ Web-based management interface with real-time stats
+- 🔌 MCP (Model Context Protocol) server for ChatGPT integration
+- 🐳 Docker deployment ready
 
 ## 🏗️ Architecture
 
 ```
+[ChatGPT Desktop]
+        ↓ (MCP Protocol)
+[MCP Server] ←→ [FastAPI Server]
+     ↓              ↓
+[MongoDB] ←→ [Qdrant] ←→ [Ollama]
+     ↓
+[KAMCO OpenAPI]
+
+Optional:
 [Cloudflare Front]
         ↓
 [Cloudflare Workers]
         ↓ (Tunnel)
 [Mac mini / Server]
- ├─ FastAPI (/ask endpoint)
- ├─ MongoDB (raw + metadata)
- ├─ Qdrant (vector store)
- ├─ Ollama (LLM & Embedding)
- └─ Collector (KAMCO OpenAPI)
 ```
 
 ## 📋 Prerequisites
@@ -61,7 +76,10 @@ brew services start mongodb-community
 ### 2. Ollama
 ```bash
 brew install ollama
-ollama pull qwen2.5:latest
+
+# Pull required models for RAG chatbot
+ollama pull nomic-embed-text:latest     # Embedding model
+ollama pull deepseek-r1:latest          # LLM for generation
 ```
 
 ### 3. Qdrant
@@ -81,7 +99,30 @@ kamco
  └─ chunks             # Chunked data for RAG (matches Qdrant payload)
 ```
 
-## 🚀 Installation
+## 🚀 Quick Start
+
+### Option 1: Docker (Recommended)
+
+```bash
+# Clone repository
+git clone https://github.com/yourusername/kamco-data-collector.git
+cd kamco-data-collector
+
+# Configure environment
+cp .env.example .env
+nano .env  # Edit with your KAMCO API key
+
+# Start all services
+docker-compose up -d
+
+# Pull Ollama model
+docker exec -it kamco-ollama ollama pull qwen2.5:latest
+
+# Collect and process data
+docker exec -it kamco-mcp-server python -m rag.manager
+```
+
+### Option 2: Manual Installation
 
 ```bash
 git clone https://github.com/yourusername/kamco-data-collector.git
@@ -110,21 +151,56 @@ QDRANT_PORT=6333
 QDRANT_COLLECTION=kamco
 
 # Ollama Models
-EMBED_MODEL=qwen2.5:latest
-GEN_MODEL=qwen2.5:latest
+EMBED_MODEL=nomic-embed-text:latest     # For embeddings
+LLM_MODEL=deepseek-r1:latest           # For generation
 
-# Flask Secret Key (for web interface)
+# Flask Configuration
 FLASK_SECRET_KEY=your_random_secret_key_here
+FLASK_PORT=5001                        # Default: 5000 (avoid conflicts with macOS Control Center)
 ```
 
 ## 📖 Usage
 
-### Data Collection Pipeline
+### MCP Server for ChatGPT (Recommended)
+
+The MCP server allows ChatGPT to directly interact with KAMCO data.
+
+#### 1. Start Services
+```bash
+docker-compose up -d
+```
+
+#### 2. Collect and Process Data
+```bash
+# Using RAG Manager (all-in-one)
+docker exec -it kamco-mcp-server python -m rag.manager
+
+# Or step by step:
+docker exec -it kamco-mcp-server python -m services.kamco_collector_service
+docker exec -it kamco-mcp-server python -m normalize.kamco_normalizer
+docker exec -it kamco-mcp-server python -m rag.embed
+```
+
+#### 3. Configure ChatGPT
+
+See [MCP_SETUP_GUIDE.md](MCP_SETUP_GUIDE.md) for detailed instructions.
+
+**Available MCP Tools:**
+- `search_kamco` - Search auctions by natural language
+- `get_kamco_by_id` - Get detailed item information
+- `get_recent_kamco` - Get recent listings
+- `ask_kamco` - Ask questions with RAG answers
+- `collect_kamco_data` - Trigger data collection
+- `embed_kamco_data` - Process and embed data
+
+### Data Collection Pipeline (Manual)
 
 #### 1. Collect Data
 Fetch raw data from KAMCO OpenAPI and store in MongoDB:
 ```bash
 python collector/kamco_fetcher.py
+# Or use the service:
+python -m services.kamco_collector_service
 ```
 
 #### 2. Normalize Data
@@ -143,6 +219,8 @@ python rag/embed.py
 #### 4. Start RAG API Server
 ```bash
 uvicorn api.main:app --host 0.0.0.0 --port 8000
+# Or with Docker:
+docker-compose up -d api
 ```
 
 Available endpoints:
@@ -156,7 +234,93 @@ Start the Flask web application:
 python web/app.py
 ```
 
-Access at `http://localhost:5000`
+Access at `http://localhost:5001`
+
+**Features:**
+- 📊 Real-time data collection monitoring
+- 🔍 Advanced search with filters
+- 📝 Detailed property information view
+- 🤖 **AI Chatbot** - RAG-based intelligent Q&A system
+- 📈 Dashboard with statistics
+
+### AI Chatbot Features
+
+The web interface includes an AI chatbot powered by RAG (Retrieval-Augmented Generation) technology:
+
+#### Key Features:
+- **🧠 Natural Language Search**: Ask questions in natural Korean
+- **🔍 Intelligent Query Processing**: Automatically detects search intent (region, price, property type)
+- **📊 Hybrid Search Mode**: 
+  - Primary: Vector-based semantic search with Qdrant + Ollama
+  - Fallback: MongoDB keyword/regex search when vector DB is unavailable
+- **🎯 Context-Aware Responses**: Recent data queries automatically pull latest collections
+- **📎 Source Citations**: All answers include source documents with relevance scores
+- **🔗 Direct Links**: Includes original KAMCO auction URLs in responses
+
+#### Query Examples:
+```
+"최근 수집된 데이터 보여줘"
+→ Shows 5 most recent items with details
+
+"서울 강남 아파트 5억 이하"
+→ Searches for apartments in Gangnam, Seoul under 500M won
+
+"이 물건의 감정가는 얼마인가요?"
+→ RAG-based answer with specific property details
+```
+
+#### Technical Implementation:
+
+**1. RAG Mode (When Qdrant + Ollama Available):**
+- Embeds user question using `nomic-embed-text` model
+- Performs vector similarity search in Qdrant (top-3)
+- Generates natural language answer using `deepseek-r1` LLM
+- Returns answer with source documents and confidence scores
+
+**2. Fallback Mode (MongoDB Only):**
+- Uses Ollama to analyze query intent (JSON extraction)
+- Constructs MongoDB query from extracted parameters:
+  - Region: `basic_info.lctnAddr` regex match
+  - Property type: `basic_info.pblancObjSe` regex match
+  - Price range: Numerical comparison
+  - Keywords: Multi-field OR search
+- Returns structured results with formatted descriptions
+
+**3. Recent Data Optimization:**
+- Detects keywords: '최근', '최신', '수집', '목록'
+- Bypasses RAG for direct MongoDB lookup
+- Sorts by `collected_at` timestamp (descending)
+- Faster response time for common queries
+
+#### API Endpoint:
+```bash
+POST /api/chat
+Content-Type: application/json
+
+{
+  "question": "서울 강남구 아파트 매물 보여줘"
+}
+
+Response:
+{
+  "success": true,
+  "answer": "서울 강남구 아파트 검색 결과입니다:\n\n1. ...",
+  "sources": [
+    {
+      "text": "공고명: ...\n원문 URL: https://...",
+      "score": 0.95
+    }
+  ],
+  "fallback": false  // true if using MongoDB fallback
+}
+```
+
+#### Dependencies:
+- **Qdrant**: Vector database for embeddings (optimal)
+- **Ollama**: Local LLM for embeddings + generation (optimal)
+- **MongoDB**: Document store + fallback search (required)
+
+💡 **Tip**: For best results, ensure Qdrant and Ollama are running. The system gracefully falls back to MongoDB-only mode if vector services are unavailable.
 
 ## 🔧 Cloudflare Tunnel Setup (Optional)
 
@@ -194,10 +358,14 @@ kamco-data-collector/
 │   └── main.py                # FastAPI RAG endpoints
 ├── collector/
 │   └── kamco_fetcher.py       # KAMCO OpenAPI data collector
+├── mcp_server/
+│   ├── __init__.py
+│   └── server.py              # MCP server for ChatGPT integration
 ├── normalize/
 │   └── kamco_normalizer.py    # Data normalization
 ├── rag/
-│   └── embed.py               # Embedding & Qdrant operations
+│   ├── embed.py               # Embedding & Qdrant operations
+│   └── manager.py             # RAG pipeline orchestration
 ├── services/
 │   └── kamco_collector_service.py  # Service layer
 ├── web/
@@ -206,8 +374,13 @@ kamco-data-collector/
 │   └── static/                # Static assets
 ├── tests/                     # Test files
 ├── screenshots/               # Application screenshots
-├── requirements.txt
+├── Dockerfile                 # Docker image definition
+├── docker-compose.yml         # Multi-container orchestration
+├── .dockerignore              # Docker build exclusions
+├── requirements.txt           # Python dependencies
 ├── .env.example               # Example environment variables
+├── mcp_config.json            # MCP server configuration
+├── MCP_SETUP_GUIDE.md         # MCP setup instructions
 ├── .gitignore
 └── README.md
 ```
@@ -278,13 +451,17 @@ For detailed PublicDataReader test results and comparisons, see [tests/README_PU
 - [ ] Add data validation and quality checks
 
 ### Phase 2: Advanced RAG Features (Q2 2026)
+- [x] AI Chatbot with natural language search ✅
+- [x] Hybrid search (vector + keyword fallback) ✅
+- [x] Recent data query optimization ✅
 - [ ] Multi-language support (English/Korean)
-- [ ] Enhanced vector search with hybrid search
+- [ ] Enhanced vector search with re-ranking
 - [ ] Implement query expansion techniques
-- [ ] Add citation and source tracking
+- [ ] Conversation history and context memory
 
 ### Phase 3: Production Readiness (Q3 2026)
-- [ ] Containerization with Docker Compose
+- [x] Containerization with Docker Compose ✅
+- [x] MCP server for ChatGPT integration ✅
 - [ ] Add monitoring and logging (Prometheus/Grafana)
 - [ ] Implement API rate limiting
 - [ ] Add authentication and authorization

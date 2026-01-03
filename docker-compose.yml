@@ -1,0 +1,157 @@
+version: '3.8'
+
+services:
+  # MongoDB - Document database
+  mongodb:
+    image: mongo:7.0
+    container_name: kamco-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-password}
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
+    networks:
+      - kamco-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Qdrant - Vector database
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: kamco-qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    networks:
+      - kamco-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Ollama - Local LLM service
+  ollama:
+    image: ollama/ollama:latest
+    container_name: kamco-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - kamco-network
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # MCP Server - KAMCO Data Server
+  mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kamco-mcp-server
+    restart: unless-stopped
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+    environment:
+      - MONGO_URI=mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASSWORD:-password}@mongodb:27017
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - QDRANT_COLLECTION=${QDRANT_COLLECTION:-kamco}
+      - EMBED_MODEL=${EMBED_MODEL:-qwen2.5:latest}
+      - LLM_MODEL=${LLM_MODEL:-qwen2.5:latest}
+      - KAMCO_SERVICE_KEY=${KAMCO_SERVICE_KEY}
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - kamco-network
+    stdin_open: true
+    tty: true
+
+  # FastAPI Service (optional - for REST API)
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kamco-api
+    restart: unless-stopped
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+    depends_on:
+      - mongodb
+      - qdrant
+      - ollama
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASSWORD:-password}@mongodb:27017
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - QDRANT_COLLECTION=${QDRANT_COLLECTION:-kamco}
+      - EMBED_MODEL=${EMBED_MODEL:-qwen2.5:latest}
+      - LLM_MODEL=${LLM_MODEL:-qwen2.5:latest}
+      - KAMCO_SERVICE_KEY=${KAMCO_SERVICE_KEY}
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - kamco-network
+
+  # Web Interface (optional - Flask UI)
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kamco-web
+    restart: unless-stopped
+    command: python web/app.py
+    depends_on:
+      - mongodb
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://${MONGO_ROOT_USER:-admin}:${MONGO_ROOT_PASSWORD:-password}@mongodb:27017
+      - KAMCO_SERVICE_KEY=${KAMCO_SERVICE_KEY}
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - kamco-network
+
+volumes:
+  mongodb_data:
+    driver: local
+  mongodb_config:
+    driver: local
+  qdrant_storage:
+    driver: local
+  ollama_data:
+    driver: local
+
+networks:
+  kamco-network:
+    driver: bridge
